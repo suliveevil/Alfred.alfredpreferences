@@ -17,6 +17,9 @@ Where are you：`China`
 
 ## Features
 
+<details>
+<summary>details</summary>
+
 ### Default Results
 
 ### File Search 文件搜索
@@ -45,8 +48,14 @@ Where are you：`China`
 
 ### Terminal / Shell
 
+</details>
+
+
 
 ## Workflows
+
+<details>
+<summary>details</summary>
 
 | Workflow | 作者 & MOD |Hotkey/keyword | 备注 |
 | --- | --- | --- | --- |
@@ -67,6 +76,9 @@ Where are you：`China`
 |||||
 | Send to Yoink| Yoink |  | 官方支持 |
 
+</details>
+
+
 
 
 ## Appearance
@@ -78,5 +90,3 @@ Where are you：`China`
 ## Powerpack
 
 ## Usage
-
-## 
