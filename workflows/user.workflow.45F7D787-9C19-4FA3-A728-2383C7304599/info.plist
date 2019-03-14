@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.suliveevil.firefoxchrome</string>
+	<key>connections</key>
+	<dict>
+		<key>33510AEF-70C4-4B37-B9A4-1E9D382DCA4D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F3391AAC-70BF-42B5-A097-76344DC187A1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F3391AAC-70BF-42B5-A097-76344DC187A1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>87B5EDBB-3751-41A3-A644-22D1782A7B70</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F3391AAC-70BF-42B5-A097-76344DC187A1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EEAE5574-0A50-41C3-A7E2-1B73DE514DF4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>76793B94-5D73-49D0-A29B-CCD0320928F2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>LeEnno</string>
+	<key>description</key>
+	<string>Open URL of Chrome's current tab in Firefox</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>B-FirefoxChrome</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>fc</string>
+				<key>subtext</key>
+				<string>Open Chrome's current tab in Firefox or vice versa</string>
+				<key>text</key>
+				<string>Firechrome</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>87B5EDBB-3751-41A3-A644-22D1782A7B70</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>tell application "System Events"	set myFrontMost to name of first item of (processes whose frontmost is true)end tell
+
+property theURL : ""
+
+if myFrontMost is "Google Chrome" then	tell application "Google Chrome"
+		set theURL to URL of active tab of window 1
+	end tell
+	tell application "System Events"
+		do shell script "Open -a Firefox " &amp; theURL
+	end tell
+else if myFrontMost is "Firefox" then
+    tell application "Firefox" to activate	tell application "System Events"
+		keystroke "l" using command down
+		keystroke "c" using command down
+		delay 0.1
+	end tell	set theURL to the clipboard	tell application "Google Chrome"
+		activate		set myTab to make new tab at end of tabs of window 1		set URL of myTab to theURL    end tell
+end if</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F3391AAC-70BF-42B5-A097-76344DC187A1</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>cf</string>
+				<key>subtext</key>
+				<string>Open Chrome's current tab in Firefox or vice versa</string>
+				<key>text</key>
+				<string>Firechrome</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>firechrome</string>
+				<key>subtext</key>
+				<string>Open Chrome's current tab in Firefox or vice versa</string>
+				<key>text</key>
+				<string>Firechrome</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>33510AEF-70C4-4B37-B9A4-1E9D382DCA4D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>tell application "System Events"	set myFrontMost to name of first item of (processes whose frontmost is true)end tell-- set the clipboard to myFrontMost property theURL : ""if myFrontMost is "Google Chrome" then	tell application "Google Chrome"		set theURL to URL of active tab of window 1	end tell		set the clipboard to theURL	tell application "Firefox" to activate		tell application "System Events"		keystroke "p" using {command down, shift down}		delay 0.5		keystroke "v" using command down		keystroke return	end tellelse if myFrontMost is "Firefox" then	tell application "System Events"		keystroke "l" using command down		keystroke "c" using command down		delay 0.1	end tell	set theURL to the clipboard	tell application "Google Chrome" to activate	tell application "System Events"		keystroke "n" using {command down, shift down}	end tell		tell application "Google Chrome"		set URL of active tab of window 1 to theURL	end tellend if</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>76793B94-5D73-49D0-A29B-CCD0320928F2</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>iff</string>
+				<key>subtext</key>
+				<string>Open current Firefox URL in a new Chrome incognito window or vice versa</string>
+				<key>text</key>
+				<string>Incognito mode</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>EEAE5574-0A50-41C3-A7E2-1B73DE514DF4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>33510AEF-70C4-4B37-B9A4-1E9D382DCA4D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>280</integer>
+			<key>ypos</key>
+			<integer>400</integer>
+		</dict>
+		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
+		<dict>
+			<key>xpos</key>
+			<integer>280</integer>
+			<key>ypos</key>
+			<integer>280</integer>
+		</dict>
+		<key>76793B94-5D73-49D0-A29B-CCD0320928F2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>480</integer>
+			<key>ypos</key>
+			<integer>520</integer>
+		</dict>
+		<key>87B5EDBB-3751-41A3-A644-22D1782A7B70</key>
+		<dict>
+			<key>xpos</key>
+			<integer>280</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>EEAE5574-0A50-41C3-A7E2-1B73DE514DF4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>280</integer>
+			<key>ypos</key>
+			<integer>520</integer>
+		</dict>
+		<key>F3391AAC-70BF-42B5-A097-76344DC187A1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>480</integer>
+			<key>ypos</key>
+			<integer>280</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.ienno.de</string>
+</dict>
+</plist>

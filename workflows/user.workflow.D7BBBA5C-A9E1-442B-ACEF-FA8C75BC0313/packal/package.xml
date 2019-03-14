@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Hide Desktop</name>
+  <version>1.2</version>
+  <bundle>com.alfred2.workflow.hidedesktop</bundle>
+  <updated>1469970674</updated>
+  <file>hide_desktop.alfredworkflow</file>
+</workflow>

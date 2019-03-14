@@ -1,0 +1,27 @@
+Memory:
+
+    Memory Slots:
+
+      ECC: Disabled
+      Upgradeable Memory: No
+
+        BANK 0/ChannelA-DIMM0:
+
+          Size: 8 GB
+          Type: LPDDR3
+          Speed: 2133 MHz
+          Status: OK
+          Manufacturer: SK Hynix
+          Part Number: -
+          Serial Number: -
+
+        BANK 2/ChannelB-DIMM0:
+
+          Size: 8 GB
+          Type: LPDDR3
+          Speed: 2133 MHz
+          Status: OK
+          Manufacturer: SK Hynix
+          Part Number: -
+          Serial Number: -
+

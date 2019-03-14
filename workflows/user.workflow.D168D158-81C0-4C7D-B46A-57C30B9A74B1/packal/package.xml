@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>alfred-pycharm</name>
+  <version>1.0</version>
+  <bundle>com.orf.dash-intellij</bundle>
+  <updated>1544107902</updated>
+  <file>alfred-pycharm.alfredworkflow</file>
+</workflow>

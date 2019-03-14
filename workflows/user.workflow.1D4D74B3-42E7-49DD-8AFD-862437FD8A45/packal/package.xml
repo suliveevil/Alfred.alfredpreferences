@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Full Text Search Anything</name>
+  <version>0.0.1</version>
+  <bundle>MacHu-GWU.fts.anything</bundle>
+  <updated>1546490540</updated>
+  <file>full-text-search-anything.alfredworkflow</file>
+</workflow>
