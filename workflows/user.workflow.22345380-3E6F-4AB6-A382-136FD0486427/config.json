@@ -1,0 +1,18 @@
+[
+    {
+        "format": "${url}",
+        "title": "URL"
+    },
+    {
+        "format": "${title}",
+        "title": "Title"
+    },
+    {
+        "format": "<a href=\"${url}\">${title}</a>",
+        "title": "Anchor"
+     },
+    {
+        "format": "[${title}](${url})",
+        "title": "Markdown"
+    }
+]

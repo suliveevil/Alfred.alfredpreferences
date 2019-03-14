@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Virtual Number Pad</name>
+  <version>1.0</version>
+  <bundle>com.wordpress.techTipsWithTheMuss.VirtualNumberPad</bundle>
+  <updated>1491849640</updated>
+  <file>virtual_number_pad.alfredworkflow</file>
+</workflow>

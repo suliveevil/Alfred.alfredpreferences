@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>PhotoCoordinates</name>
+  <version>1.0.0</version>
+  <bundle>com.vitorgalvao.alfred.photocoordinates</bundle>
+  <updated>1551209361</updated>
+  <file>photocoordinates.alfredworkflow</file>
+</workflow>

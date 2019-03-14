@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.olivercj.alfred.number-coversion</string>
+	<key>connections</key>
+	<dict>
+		<key>95E67FC4-E06A-4271-AE7D-CC81EB28CD16</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>782BDC4A-97C4-4005-BBBC-74EAAEBF6D21</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>cgjp123@163.com</string>
+	<key>description</key>
+	<string>进制转换，自动判读输入数字，转换结果包括16进制，10进制，8进制，2进制</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>coversion</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>782BDC4A-97C4-4005-BBBC-74EAAEBF6D21</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>cov</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>正在转换中...</string>
+				<key>script</key>
+				<string>date_default_timezone_set('prc');
+require('autoload.php');
+Autoload::instance()-&gt;init();
+$query = "{query}";
+new \workflow\app\Conversion($query);
+</string>
+				<key>subtext</key>
+				<string>输入格式：16机制以0x开头，8进制以0c开头，2进制以b开头，10进制直接输入</string>
+				<key>title</key>
+				<string>自动进制转换</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>95E67FC4-E06A-4271-AE7D-CC81EB28CD16</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>自动判断并转换，转换结果包括16进制，10进制，8进制，2进制
+输入格式：
+16进制：0x开头
+8进制：0c开头
+2进制：b开头
+10进制：直接输入数字</string>
+	<key>uidata</key>
+	<dict>
+		<key>782BDC4A-97C4-4005-BBBC-74EAAEBF6D21</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>95E67FC4-E06A-4271-AE7D-CC81EB28CD16</key>
+		<dict>
+			<key>ypos</key>
+			<real>40</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

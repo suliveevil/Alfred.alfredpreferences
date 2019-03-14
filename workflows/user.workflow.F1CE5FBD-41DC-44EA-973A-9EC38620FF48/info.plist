@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.pawelgrzybek.hex</string>
+	<key>connections</key>
+	<dict>
+		<key>C0E4ACB2-173F-411D-95B0-BBAE280E4286</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EB1961F4-8E94-4177-BDF6-8B662F2C3775</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>EE78B2E3-7EB8-4B6F-96DE-CE04BA437095</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EB1961F4-8E94-4177-BDF6-8B662F2C3775</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Pawel Grzybek</string>
+	<key>description</key>
+	<string>Convert decimal to hexadecimal number</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>hex</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>EB1961F4-8E94-4177-BDF6-8B662F2C3775</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>100</integer>
+				<key>keyword</key>
+				<string>hex</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>dddd</string>
+				<key>script</key>
+				<string>&lt;?php
+
+$query = $argv[1];
+$queryIsNumeric = is_numeric($query);
+
+class Output
+{
+  public $items;
+}
+
+$getOut = new Output();
+
+class IndividualOutput
+{
+  public $title;
+  public $subtitle;
+  public $arg;
+}
+
+if($queryIsNumeric) {
+  $myIndividualOutput = new IndividualOutput();
+  $myIndividualOutput-&gt;title = dechex(intval($query));
+  $myIndividualOutput-&gt;subtitle = 'Hit enter to copy to clipboard';
+  $myIndividualOutput-&gt;arg = dechex(intval($query));
+
+  $getOut-&gt;items = array($myIndividualOutput);
+}
+else {
+  $myIndividualOutput = new IndividualOutput();
+  $myIndividualOutput-&gt;title = 'Sorry, ' . $query . ' is not a number :-(';
+  $myIndividualOutput-&gt;subtitle = 'Please passa a valid number';
+  $myIndividualOutput-&gt;arg = '';
+
+  $getOut-&gt;items = array($myIndividualOutput);
+}
+
+
+
+echo json_encode($getOut);
+
+?&gt;</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Hit enter to copy to clipboard</string>
+				<key>title</key>
+				<string>Convert decimal number to hexadecimal</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C0E4ACB2-173F-411D-95B0-BBAE280E4286</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>in your clipboard</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>EE78B2E3-7EB8-4B6F-96DE-CE04BA437095</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>C0E4ACB2-173F-411D-95B0-BBAE280E4286</key>
+		<dict>
+			<key>xpos</key>
+			<integer>110</integer>
+			<key>ypos</key>
+			<integer>90</integer>
+		</dict>
+		<key>EB1961F4-8E94-4177-BDF6-8B662F2C3775</key>
+		<dict>
+			<key>xpos</key>
+			<integer>330</integer>
+			<key>ypos</key>
+			<integer>90</integer>
+		</dict>
+		<key>EE78B2E3-7EB8-4B6F-96DE-CE04BA437095</key>
+		<dict>
+			<key>xpos</key>
+			<integer>330</integer>
+			<key>ypos</key>
+			<integer>230</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://pawelgrzybek.com/</string>
+</dict>
+</plist>

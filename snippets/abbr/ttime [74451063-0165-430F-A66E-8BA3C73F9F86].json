@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "{datetime:full}\n{date +1d:EEEE}\n{date -10y:``````}\n{date +2y +3M +1d:EEEE}\n{datetime +8h}\n{datetime +1337h}",
+    "uid" : "74451063-0165-430F-A66E-8BA3C73F9F86",
+    "name" : "ttime",
+    "keyword" : "ttime"
+  }
+}

@@ -1,0 +1,10 @@
+framework module SafariHistorySearchFramework {
+  umbrella header "SafariHistorySearchFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module SafariHistorySearchFramework.Swift {
+    header "SafariHistorySearchFramework-Swift.h"
+}

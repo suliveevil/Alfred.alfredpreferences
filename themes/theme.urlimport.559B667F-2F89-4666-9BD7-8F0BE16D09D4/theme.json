@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 6,
+      "subtext" : {
+        "size" : 10,
+        "colorSelected" : "#FEFFFF7F",
+        "font" : "System Light",
+        "color" : "#495159CC"
+      },
+      "shortcut" : {
+        "size" : 10,
+        "colorSelected" : "#FEFFFFFF",
+        "font" : "System Light",
+        "color" : "#495159CC"
+      },
+      "backgroundSelected" : "#839CBFE6",
+      "text" : {
+        "size" : 16,
+        "colorSelected" : "#FEFFFFFF",
+        "font" : "System",
+        "color" : "#495159FF"
+      },
+      "iconPaddingHorizontal" : 6,
+      "paddingVertical" : 5,
+      "iconSize" : 33
+    },
+    "search" : {
+      "paddingVertical" : 0,
+      "background" : "#FEFC7800",
+      "spacing" : 0,
+      "text" : {
+        "size" : 30,
+        "colorSelected" : "#000000FF",
+        "font" : "System",
+        "color" : "#495159FF"
+      },
+      "backgroundSelected" : "#BFF6ACFF"
+    },
+    "window" : {
+      "color" : "#FEFFFEF2",
+      "paddingHorizontal" : 4,
+      "width" : 500,
+      "borderPadding" : 0,
+      "borderColor" : "#839CBFF1",
+      "blur" : 40,
+      "roundness" : 10,
+      "paddingVertical" : 4
+    },
+    "credit" : "mayuzumi",
+    "separator" : {
+      "color" : "#00000017",
+      "thickness" : 1
+    },
+    "scrollbar" : {
+      "color" : "#4951597F",
+      "thickness" : 2
+    },
+    "name" : "Launchbar Light"
+  }
+}

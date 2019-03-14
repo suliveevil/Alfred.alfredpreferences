@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>605300AE-004F-40D1-8788-6F00AF93EAF9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F8189201-4F0B-420E-ACB5-75E05537E8C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Bhishan Poudel</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Simple TimeZones</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>tz</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>#===================================================================
+# Name of timezones (You need to edit only this line)
+timezones = ["Asia/Kathmandu","America/Chicago","Europe/Brussels"]
+
+
+
+#===================================================================
+# Do not edit below this.
+import sys
+import json
+
+from datetime import datetime
+from pytz import timezone
+
+# get cities from timezones
+dat_list = []
+fmt = '%Y %b %d, %I:%M %p'
+
+
+cities = [datetime.now(timezone(tz)).strftime(fmt) for tz in timezones]
+for i in range(len(timezones)):
+    dat_list.append({'title': timezones[i].split('/')[1],'subtitle': cities[i]})
+
+
+
+data = {"items": dat_list}
+json.dump(data, sys.stdout)
+
+# NOTE: to get list of time zones
+# https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+#
+#for tz in pytz.all_timezones:
+#    print (tz)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>test.sh</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Timezones</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F8189201-4F0B-420E-ACB5-75E05537E8C7</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>605300AE-004F-40D1-8788-6F00AF93EAF9</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>605300AE-004F-40D1-8788-6F00AF93EAF9</key>
+		<dict>
+			<key>note</key>
+			<string>cmt opt t
+Show Time Zones</string>
+			<key>xpos</key>
+			<integer>20</integer>
+			<key>ypos</key>
+			<integer>40</integer>
+		</dict>
+		<key>F8189201-4F0B-420E-ACB5-75E05537E8C7</key>
+		<dict>
+			<key>note</key>
+			<string>Edit this file to add Citites
+e.g. "Asia/Tokyo"
+
+See list here:
+https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</string>
+			<key>xpos</key>
+			<integer>230</integer>
+			<key>ypos</key>
+			<integer>40</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

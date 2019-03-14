@@ -1,0 +1,1 @@
+from gsearch import search

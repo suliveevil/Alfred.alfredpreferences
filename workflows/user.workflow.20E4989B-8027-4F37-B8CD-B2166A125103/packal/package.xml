@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Restart App</name>
+  <version>3.1</version>
+  <bundle>com.renegaed.restart-app</bundle>
+  <updated>1457904349</updated>
+  <file>restart_app.alfredworkflow</file>
+</workflow>

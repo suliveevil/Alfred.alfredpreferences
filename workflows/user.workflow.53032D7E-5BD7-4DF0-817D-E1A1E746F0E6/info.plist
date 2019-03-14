@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.no-technology-no-life.microsoft.translate</string>
+	<key>connections</key>
+	<dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CD6DF3F1-BF68-4802-B563-985C07606FD0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CD6DF3F1-BF68-4802-B563-985C07606FD0</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>masaki maeda</string>
+	<key>description</key>
+	<string>Translate by Microsoft Translator Text API</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>trs</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>CD6DF3F1-BF68-4802-B563-985C07606FD0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>trs</string>
+				<key>queuedelaycustom</key>
+				<integer>5</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>2</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>require 'json'
+require 'net/https'
+require 'uri'
+require 'cgi'
+require 'securerandom'
+
+def alfred_output(title:, subtitle:, arg:)
+  {
+    items: [
+      {
+        title: title,
+        subtitle: subtitle,
+        arg: arg,
+        icon: 'some_icon.png'
+      }
+    ]
+  }.to_json
+end
+
+def error_no_key
+  print alfred_output(
+    title: 'Error',
+    subtitle: 'No key error. Please set "SUBSCRIPTIOM_KEY".',
+    arg: ''
+  )
+end
+
+def error_lang
+  print alfred_output(
+    title: 'Error',
+    subtitle: 'Language error. Please set correct language like this. "trs en ja target_text".',
+    arg: ''
+  )
+end
+
+def error_few_length
+  print alfred_output(
+    title: 'Error',
+    subtitle: 'Few length error. Please input target text.',
+    arg: ''
+  )
+end
+
+def error_with_message(message)
+  print alfred_output(
+    title: 'Error',
+    subtitle: message,
+    arg: ''
+  )
+end
+
+langs = [
+  "en", "af", "ar", "bg", "bn", "bs", "ca", "zh-Hans", "cs", "cy", "da", "de", "el", "es", "et", "fa", "fi", "ht", "fr", "he", "hi", "hr",
+  "hu", "id", "is", "it", "ja", "ko", "lt", "lv", "mt", "ms", "mww", "nl", "nb", "pl", "pt", "ro", "ru", "sk", "sl", "sr-Latn", "sv", "sw",
+  "ta", "th", "tlh", "tr", "uk", "ur", "vi"
+]
+key = ENV['SUBSCRIPTIOM_KEY']
+
+words = ARGV[0].split(' ')
+
+from = words[0]
+to   = words[1]
+
+unless key
+  error_no_key
+  return
+end
+
+unless langs.include?(from)
+  error_lang
+  return
+end
+
+unless langs.include?(to)
+  error_lang
+  return
+end
+
+if words.size &lt; 3
+  error_few_length
+  return
+end
+
+
+text = words[2..-1].join(' ')
+
+host = 'https://api.cognitive.microsofttranslator.com'
+path = '/translate?api-version=3.0'
+
+params = "&amp;from=#{from}&amp;to=#{to}"
+
+uri = URI (host + path + params)
+
+content = '[{"Text" : "' + text + '"}]'
+
+request = Net::HTTP::Post.new(uri)
+request['Content-type'] = 'application/json'
+request['Content-length'] = content.length
+request['Ocp-Apim-Subscription-Key'] = key
+request['X-ClientTraceId'] = SecureRandom.uuid
+request.body = content
+
+response = Net::HTTP.start(uri.host, uri.port, :use_ssl =&gt; uri.scheme == 'https') do |http|
+  http.request (request)
+end
+
+result = response.body.force_encoding("utf-8")
+trans = JSON.parse(result)
+
+if trans.is_a?(Hash)
+  if trans.has_key?('error')
+    error_with_message(trans['error']['message'])
+  else
+    error_with_message('Unfortunately something wrong.')
+  end
+  return
+end
+
+print alfred_output(
+  title: trans[0]['translations'][0]['text'],
+  subtitle: 'Success translate.',
+  arg: trans[0]['translations'][0]['text']
+)
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Translate by Microsoft Translator Text API</string>
+				<key>type</key>
+				<integer>2</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This is workflow application using Microsoft Translator Text API.</string>
+	<key>uidata</key>
+	<dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>CD6DF3F1-BF68-4802-B563-985C07606FD0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<dict>
+		<key>SUBSCRIPTIOM_KEY</key>
+		<string></string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>SUBSCRIPTIOM_KEY</string>
+	</array>
+	<key>version</key>
+	<string></string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

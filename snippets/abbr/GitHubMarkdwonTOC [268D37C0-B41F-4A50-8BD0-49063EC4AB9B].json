@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : ".\/gh-md-toc {clipboard} | pbcopy",
+    "uid" : "268D37C0-B41F-4A50-8BD0-49063EC4AB9B",
+    "name" : "GitHubMarkdwonTOC",
+    "keyword" : "@toc"
+  }
+}

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Safari History Search</name>
+  <version>1.0</version>
+  <bundle>com.rx2130.alfred.hsi</bundle>
+  <updated>1508381392</updated>
+  <file>search-safari-history-1.0.alfredworkflow</file>
+</workflow>

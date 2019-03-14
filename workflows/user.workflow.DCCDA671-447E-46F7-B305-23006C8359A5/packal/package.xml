@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Workflow Help Workflows</name>
+  <version>1.05a</version>
+  <bundle>com.help.shawn.rice</bundle>
+  <updated>1389317476</updated>
+  <file>workflow_help_workflows.alfredworkflow</file>
+</workflow>

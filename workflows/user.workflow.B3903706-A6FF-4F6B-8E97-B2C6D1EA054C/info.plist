@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>chusiang.macvim</string>
+	<key>connections</key>
+	<dict>
+		<key>854EAD18-64D8-45A1-972F-C32DA9D0C1E7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AF25BE99-46C0-4CED-BEA7-8D30CFB708DB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F6384CA7-751E-42DC-BEC0-8E9300E00F9A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AF25BE99-46C0-4CED-BEA7-8D30CFB708DB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FF8E3BE3-2E94-4801-8A01-9AA8DE17340B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AF25BE99-46C0-4CED-BEA7-8D30CFB708DB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>chusiang</string>
+	<key>description</key>
+	<string>Open files or folders in MacVim.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>MacVim v1.0</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>vi</string>
+				<key>scopes</key>
+				<array>
+					<string>~</string>
+				</array>
+				<key>subtext</key>
+				<string>Open files or folders in MacVim.</string>
+				<key>title</key>
+				<string>MacVim</string>
+				<key>types</key>
+				<array/>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>FF8E3BE3-2E94-4801-8A01-9AA8DE17340B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>vim</string>
+				<key>scopes</key>
+				<array>
+					<string>~</string>
+				</array>
+				<key>subtext</key>
+				<string>Open files or folders in MacVim.</string>
+				<key>title</key>
+				<string>MacVim</string>
+				<key>types</key>
+				<array/>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>854EAD18-64D8-45A1-972F-C32DA9D0C1E7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+set finderSelection to ""
+set theTarget to ""
+set appPath to path to application "MacVim"
+set defaultTarget to (path to home folder as alias)
+-- comment line above and uncomment line below to open desktop instead of user home when there's no selection or open folder in the Finder:
+-- set defaultTarget to (path to desktop folder as alias)
+
+if (q as string) is "" then
+    tell application "Finder"
+        set finderSelection to (get selection)
+        if length of finderSelection is greater than 0 then
+            set theTarget to finderSelection
+        else
+            try
+                set theTarget to (folder of the front window as alias)
+            on error
+                set theTarget to defaultTarget
+            end try
+        end if
+
+        tell application "Finder"
+            open theTarget using appPath
+        end tell
+
+    end tell
+else
+    try
+        set targets to {}
+        set oldDelimiters to text item delimiters
+        set text item delimiters to tab
+        set qArray to every text item of q
+        set text item delimiters to oldDelimiters
+        repeat with atarget in qArray
+
+            if atarget starts with "~" then
+                set userHome to POSIX path of (path to home folder)
+                if userHome ends with "/" then
+                    set userHome to characters 1 thru -2 of userHome as string
+                end if
+
+                try
+                    set atarget to userHome &amp; characters 2 thru -1 of atarget as string
+                on error
+                    set atarget to userHome
+                end try
+
+            end if
+
+            set targetAlias to ((POSIX file atarget) as alias)
+            set targets to targets &amp; targetAlias
+        end repeat
+
+        set theTarget to targets
+
+        tell application "Finder"
+            open theTarget using appPath
+        end tell
+
+    on error
+        return (atarget as string) &amp; " is not a valid file or folder path."
+    end try
+end if
+
+
+end alfred_script
+</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>AF25BE99-46C0-4CED-BEA7-8D30CFB708DB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>mvim</string>
+				<key>scopes</key>
+				<array>
+					<string>~</string>
+				</array>
+				<key>subtext</key>
+				<string>Open files or folders in MacVim.</string>
+				<key>title</key>
+				<string>MacVim</string>
+				<key>types</key>
+				<array/>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>F6384CA7-751E-42DC-BEC0-8E9300E00F9A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Open in MacVim
+
+Open files or folders in MacVim with Alfred 2.7.1.
+
+-chusiang</string>
+	<key>uidata</key>
+	<dict>
+		<key>854EAD18-64D8-45A1-972F-C32DA9D0C1E7</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>AF25BE99-46C0-4CED-BEA7-8D30CFB708DB</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>F6384CA7-751E-42DC-BEC0-8E9300E00F9A</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>FF8E3BE3-2E94-4801-8A01-9AA8DE17340B</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>note.drx.tw</string>
+</dict>
+</plist>
