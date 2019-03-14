@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>hex</name>
-  <version>1.0</version>
-  <bundle>com.pawelgrzybek.hex</bundle>
-  <updated>1512573029</updated>
-  <file>hex.alfredworkflow</file>
-</workflow>

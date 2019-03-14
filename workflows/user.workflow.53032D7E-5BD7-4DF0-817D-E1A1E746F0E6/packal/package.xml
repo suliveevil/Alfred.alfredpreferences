@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>Microsoft Translate Alfred Workflow</name>
-  <version>1.0</version>
-  <bundle>com.no-technology-no-life.microsoft.translate</bundle>
-  <updated>1537813857</updated>
-  <file>trs.alfredworkflow</file>
-</workflow>

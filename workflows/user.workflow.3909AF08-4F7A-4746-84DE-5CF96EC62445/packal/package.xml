@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>YoudaoTranslate</name>
-  <version>1.0</version>
-  <bundle>Rouwanzi.workflow.YoudaoDict</bundle>
-  <updated>1535573448</updated>
-  <file>youdaodict.alfredworkflow</file>
-</workflow>

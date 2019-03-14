@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>Precise Age Calculator</name>
-  <version>1.0b</version>
-  <bundle>com.chintanbuch.alfred.agecalculator</bundle>
-  <updated>1413992943</updated>
-  <file>age_calculator.alfredworkflow</file>
-</workflow>

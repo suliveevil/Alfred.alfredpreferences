@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>Calibre Search</name>
-  <version>0.1</version>
-  <bundle>com.areo-collection</bundle>
-  <updated>1508769165</updated>
-  <file>calibresearch.alfredworkflow</file>
-</workflow>

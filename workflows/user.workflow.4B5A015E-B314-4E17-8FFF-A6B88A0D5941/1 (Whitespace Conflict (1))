@@ -1,1 +1,0 @@
-/bin/bash: line 4: curl -s http://geoip.maxmind.com/e?l=NYFQfMR3MgXS&i={query} 2: No such file or directory

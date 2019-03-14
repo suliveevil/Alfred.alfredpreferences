@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>xkcd</name>
-  <version>1.2.3</version>
-  <bundle>jienan.xyz.xkcd</bundle>
-  <updated>1544496481</updated>
-  <file>xkcd-1.2.3.alfredworkflow</file>
-</workflow>

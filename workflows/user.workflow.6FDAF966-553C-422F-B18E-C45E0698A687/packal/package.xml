@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>Send Screenshot to Yoink</name>
-  <version>1.0.1</version>
-  <bundle>com.bogdanvitoc.send-screenshot-to-yoink</bundle>
-  <updated>1493140299</updated>
-  <file>send_screenshot_to_yoink.alfredworkflow</file>
-</workflow>

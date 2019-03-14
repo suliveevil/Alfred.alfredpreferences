@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>Wolfram|Alpha</name>
-  <version>1.0</version>
-  <bundle>tylereich.wolframalpha</bundle>
-  <updated>1383623105</updated>
-  <file>wolframalpha.alfredworkflow</file>
-</workflow>

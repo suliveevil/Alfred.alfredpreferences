@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>Word Counter</name>
-  <version>.1</version>
-  <bundle>com.alfredapp.wordcounter</bundle>
-  <updated>1508887545</updated>
-  <file>word_counter.alfredworkflow</file>
-</workflow>
