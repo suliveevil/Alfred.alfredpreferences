@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.milkticc.ToggleInputMethod</string>
+	<key>connections</key>
+	<dict>
+		<key>69ED71FF-CA34-47DD-8A36-2151CB92DAE0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C6FCA717-9825-4908-B83A-74B55FF6089E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8837AD74-583B-4DC3-B9C6-30083F330333</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C6FCA717-9825-4908-B83A-74B55FF6089E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>AA6A569F-A6DC-4313-A82F-940ED135D0E3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D484363F-4038-453C-B74B-C45816DB39E9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B405E2A3-ED63-4D40-9FAA-F0B42490F74E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C6FCA717-9825-4908-B83A-74B55FF6089E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D484363F-4038-453C-B74B-C45816DB39E9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C6FCA717-9825-4908-B83A-74B55FF6089E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F1A53C90-D4E9-463E-A1E3-09E95E863B2F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C6FCA717-9825-4908-B83A-74B55FF6089E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>MilkTicc</string>
+	<key>description</key>
+	<string>Choose an Input Method</string>
+	<key>disabled</key>
+	<true/>
+	<key>name</key>
+	<string>Toggle Input Method</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>5</integer>
+				<key>keyword</key>
+				<string>in</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Loading all of activated Input Method</string>
+				<key>script</key>
+				<string>set workflowFolder to do shell script "pwd"
+set wlib to load script POSIX file (workflowFolder &amp; "/q_workflow.scpt")
+set wf to wlib's new_workflow_with_bundle("com.milkticc.ToggleInputMethod")tell application "System Events" to tell process "SystemUIServer"		set menuA to (1st menu bar item of menu bar 1 whose description is "text input")	set iML to name of menu items of menu 1 of menuA	set mPos to 0	set sIM to ""	repeat with a from 1 to count of iML		if item a of iML is missing value then			set mPos to a			exit repeat		end if	end repeat			set iML1 to items 1 thru (mPos - 1) of iML			repeat with mItem in menu items of menu 1 of menuA		if value of attribute "AXMenuItemMarkChar" of mItem as string = "✓" then			set sIM to name of mItem			exit repeat		end if	end repeat	end tellrepeat with i from 1 to the count of iML1
+set n to item i of iML1
+if item i of iML1 = sIM then
+	add_result of wf with isValid given theUid:"", theArg:i, theTitle:n, theAutocomplete:"", theSubtitle:n &amp; "is Currently Selected", theIcon:"icon.png", theType:""
+else
+	add_result of wf with isValid given theUid:"", theArg:i, theTitle:n, theAutocomplete:"", theSubtitle:"Select "&amp;n, theIcon:"icon.png", theType:""
+end if
+end repeat
+wf's to_xml("")</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Swithing between Input Method</string>
+				<key>title</key>
+				<string>Toggle Input Method</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D484363F-4038-453C-B74B-C45816DB39E9</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  changeKeyboardLayout(q as number)
+end alfred_script
+
+on changeKeyboardLayout(layoutOrder)	tell application "System Events" to tell process "SystemUIServer"		tell (1st menu bar item of menu bar 1 whose description is "text input") to {click, click ( menu item layoutOrder of menu 1)}	end tellend changeKeyboardLayout</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C6FCA717-9825-4908-B83A-74B55FF6089E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>AA6A569F-A6DC-4313-A82F-940ED135D0E3</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>1</string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>8837AD74-583B-4DC3-B9C6-30083F330333</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>2</string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>B405E2A3-ED63-4D40-9FAA-F0B42490F74E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>3</string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>F1A53C90-D4E9-463E-A1E3-09E95E863B2F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>4</string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>69ED71FF-CA34-47DD-8A36-2151CB92DAE0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This is a simple workflow designed to display all and change between different input methods using Alfred. Additionally you can set up shortcuts to switch to a specific input method. Change the shortcuts to your preference.</string>
+	<key>uidata</key>
+	<dict>
+		<key>69ED71FF-CA34-47DD-8A36-2151CB92DAE0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>240</integer>
+			<key>ypos</key>
+			<integer>710</integer>
+		</dict>
+		<key>8837AD74-583B-4DC3-B9C6-30083F330333</key>
+		<dict>
+			<key>xpos</key>
+			<integer>240</integer>
+			<key>ypos</key>
+			<integer>300</integer>
+		</dict>
+		<key>AA6A569F-A6DC-4313-A82F-940ED135D0E3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>240</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>B405E2A3-ED63-4D40-9FAA-F0B42490F74E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>240</integer>
+			<key>ypos</key>
+			<integer>430</integer>
+		</dict>
+		<key>C6FCA717-9825-4908-B83A-74B55FF6089E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>710</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>D484363F-4038-453C-B74B-C45816DB39E9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>430</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>F1A53C90-D4E9-463E-A1E3-09E95E863B2F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>240</integer>
+			<key>ypos</key>
+			<integer>570</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

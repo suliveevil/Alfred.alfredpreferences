@@ -35,27 +35,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>keyword</key>
-				<string>ss</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>BAB ScreenShot</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>58B0B2B7-AF18-4685-9147-9D4542664657</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -75,6 +54,27 @@
 			<string>6A28A4D8-DC4C-4940-B7C0-8AD6AE1E3E93</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>ss</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>BAB ScreenShot</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>58B0B2B7-AF18-4685-9147-9D4542664657</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>

@@ -9,7 +9,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>gith</string>
+			<string>gs</string>
 			<key>text</key>
 			<string>Github Search</string>
 			<key>url</key>
@@ -24,9 +24,37 @@
 			<key>keyword</key>
 			<string>bk</string>
 			<key>text</key>
-			<string>Baidu百科</string>
+			<string>百度 百科</string>
 			<key>url</key>
 			<string>https://baike.baidu.com/search?word={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>13C08CB8-12A3-442E-91EF-0466C492FFA1</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>wf</string>
+			<key>spaces</key>
+			<string>+</string>
+			<key>text</key>
+			<string>Alfred Workflow Search</string>
+			<key>url</key>
+			<string>http://www.packal.org/workflow-search?query={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>1B25497B-14CB-4910-A722-318380499DC1</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>aicon</string>
+			<key>text</key>
+			<string>阿里巴巴图标库</string>
+			<key>url</key>
+			<string>https://www.iconfont.cn/search/index?searchType=icon&amp;q={query}</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
@@ -35,9 +63,9 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>zz</string>
+			<string>zhi</string>
 			<key>text</key>
-			<string>Zhihu</string>
+			<string>知乎</string>
 			<key>url</key>
 			<string>https://www.zhihu.com/search?type=content&amp;q={query}</string>
 			<key>utf8</key>
@@ -63,7 +91,7 @@
 			<key>keyword</key>
 			<string>bd</string>
 			<key>text</key>
-			<string>Baidu Search</string>
+			<string>百度</string>
 			<key>url</key>
 			<string>https://www.baidu.com/s?wd={query}</string>
 			<key>utf8</key>
@@ -102,22 +130,9 @@
 			<key>keyword</key>
 			<string>tb</string>
 			<key>text</key>
-			<string>TaoBao</string>
+			<string>淘宝</string>
 			<key>url</key>
 			<string>https://s.taobao.com/search?q={query}</string>
-			<key>utf8</key>
-			<true/>
-		</dict>
-		<key>E5A4BA12-BCB4-4DDE-A6CD-7A098D1DF0EF</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>gs</string>
-			<key>text</key>
-			<string>GitHub Search</string>
-			<key>url</key>
-			<string>https://github.com/search?q={query}</string>
 			<key>utf8</key>
 			<true/>
 		</dict>

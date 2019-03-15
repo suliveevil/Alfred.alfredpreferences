@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Toggle Greyscale</name>
+  <version>1.0</version>
+  <bundle>org.codegrower.ToggleGreyScale</bundle>
+  <updated>1547062085</updated>
+  <file>toggle_greyscale.alfredworkflow</file>
+</workflow>

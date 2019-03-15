@@ -257,7 +257,7 @@
 	<key>createdby</key>
 	<string></string>
 	<key>description</key>
-	<string></string>
+	<string>仿LaunchBar</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>

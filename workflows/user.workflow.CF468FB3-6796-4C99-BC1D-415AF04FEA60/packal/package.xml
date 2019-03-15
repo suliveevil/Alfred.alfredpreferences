@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Visual Studio Code</name>
+  <version>1.0.0</version>
+  <bundle>com.alexchantastic.openwithvscode</bundle>
+  <updated>1534734837</updated>
+  <file>alfred-open-with-vscode-workflow.alfredworkflow</file>
+</workflow>

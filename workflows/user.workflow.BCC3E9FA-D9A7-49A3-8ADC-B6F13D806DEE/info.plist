@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.zji.newchromewindow</string>
+	<key>connections</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>zji</string>
+	<key>description</key>
+	<string>Open a new Chrome window</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Open new window</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "/Applications/Google Chrome.app"
+		make new window		set URL of active tab of window 1 to "https://www.google.com/search?q=" &amp; q
+	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>newchrome</string>
+				<key>subtext</key>
+				<string>Open a new chrome window</string>
+				<key>text</key>
+				<string>newchrome</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>264A09D9-DE34-403A-9524-C67F6525811D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>270</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/zhenleiji/AlfredOpenNewChromeWindow</string>
+</dict>
+</plist>

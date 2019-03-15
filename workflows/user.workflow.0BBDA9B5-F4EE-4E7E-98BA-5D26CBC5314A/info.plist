@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.bhishanpdl.markdown_toc</string>
+	<key>connections</key>
+	<dict>
+		<key>F5793663-9B5E-466F-A4E2-C384065F8DC4</key>
+		<array/>
+		<key>FA5BA4B3-2FFC-46E7-8748-9DE33EA24A21</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F5793663-9B5E-466F-A4E2-C384065F8DC4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Bhishan Poudel</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Markdown TOC</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>toc</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Markdown TOC</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FA5BA4B3-2FFC-46E7-8748-9DE33EA24A21</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>pbpaste &gt; alfred_markdown.md
+
+
+# Reference: https://github.com/ekalinin/github-markdown-toc
+./gh-md-toc alfred_markdown.md &gt; alfred_markdown2.md
+
+
+
+sed '/^$/d;' alfred_markdown2.md  &gt; alfred_markdown3.md # delete all empty lines in file 
+sed '$d;' alfred_markdown3.md &gt; alfred_markdown4.md     # delete last line
+
+
+
+pbcopy &lt; alfred_markdown4.md
+
+
+pbpaste</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F5793663-9B5E-466F-A4E2-C384065F8DC4</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>F5793663-9B5E-466F-A4E2-C384065F8DC4</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
+			<key>xpos</key>
+			<integer>440</integer>
+			<key>ypos</key>
+			<integer>90</integer>
+		</dict>
+		<key>FA5BA4B3-2FFC-46E7-8748-9DE33EA24A21</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
+			<key>note</key>
+			<string>1. copy the text
+2. use toc command
+3. paste to the top</string>
+			<key>xpos</key>
+			<integer>130</integer>
+			<key>ypos</key>
+			<integer>90</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/bhishanpdl/Alfred_MARKDOWN_TOC</string>
+</dict>
+</plist>

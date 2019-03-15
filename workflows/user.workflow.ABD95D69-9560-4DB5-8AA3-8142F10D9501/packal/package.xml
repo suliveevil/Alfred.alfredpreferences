@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Baidu Translation</name>
+  <version>0.1</version>
+  <bundle>com.my.workflow.baidutranslation</bundle>
+  <updated>1522550717</updated>
+  <file>baidu_fanyi.alfredworkflow</file>
+</workflow>

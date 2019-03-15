@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.jojonki.sso</string>
+	<key>connections</key>
+	<dict>
+		<key>0B3460B3-04F3-4887-BBBA-ABFCD811E9E0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>07312B94-1AA3-437A-8DD9-5519A4B62607</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5D8F18C1-C0F3-41F0-B420-25ECF06A9069</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0B3460B3-04F3-4887-BBBA-ABFCD811E9E0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>jojonki</string>
+	<key>description</key>
+	<string>Quickly switch sound output</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Switch Sound Output</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>spk</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>LOADING</string>
+				<key>script</key>
+				<string>tell application "System Preferences"
+	-- set current pane to pane "com.apple.preference.sound"
+ 	reveal pane id "com.apple.preference.sound"
+end tell
+delay 0.1set js to "{\"items\": ["tell application "System Events"	tell application process "System Preferences"		tell tab group 1 of window "Sound"
+			click radio button "Output"			tell table 1 of scroll area 1				repeat with r in rows					if value of text field of r as text is not "" then						set sp_name to (value of text field 1 of r as text)						log sp_name						set js to js &amp; "{\"title\":\"" &amp; sp_name &amp; "\",\"arg\": \"" &amp; sp_name &amp; "\"},"					end if				end repeat			end tell		end tell	end tellend tellset js to js &amp; "]}"return js</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Switch Speaker</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5D8F18C1-C0F3-41F0-B420-25ECF06A9069</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>Switch to {query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>07312B94-1AA3-437A-8DD9-5519A4B62607</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>set sp_name to "{query}"
+tell application "System Preferences"	reveal anchor "output" of pane id "com.apple.preference.sound"end telltell application "System Events" to tell process "System Preferences"	tell table 1 of scroll area 1 of tab group 1 of window 1		select (row 1 where value of text field 1 is sp_name)	end tellend tell
+return sp_name</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0B3460B3-04F3-4887-BBBA-ABFCD811E9E0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>07312B94-1AA3-437A-8DD9-5519A4B62607</key>
+		<dict>
+			<key>xpos</key>
+			<integer>590</integer>
+			<key>ypos</key>
+			<integer>300</integer>
+		</dict>
+		<key>0B3460B3-04F3-4887-BBBA-ABFCD811E9E0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>360</integer>
+			<key>ypos</key>
+			<integer>300</integer>
+		</dict>
+		<key>5D8F18C1-C0F3-41F0-B420-25ECF06A9069</key>
+		<dict>
+			<key>xpos</key>
+			<integer>120</integer>
+			<key>ypos</key>
+			<integer>300</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.twitter.com/jojonki</string>
+</dict>
+</plist>

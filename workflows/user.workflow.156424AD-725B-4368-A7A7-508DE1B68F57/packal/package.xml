@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>HackerBoard</name>
-  <version>1.0.1</version>
-  <bundle>com.vitorgalvao.alfred.hackerboard</bundle>
-  <updated>1498065021</updated>
-  <file>hackerboard.alfredworkflow</file>
-</workflow>

@@ -1,0 +1,300 @@
+{
+  "books": [
+    {
+      "id": "gen",
+      "name": "1. Mooseksen kirja"
+    },
+    {
+      "id": "exo",
+      "name": "2. Mooseksen kirja"
+    },
+    {
+      "id": "lev",
+      "name": "3. Mooseksen kirja"
+    },
+    {
+      "id": "num",
+      "name": "4. Mooseksen kirja"
+    },
+    {
+      "id": "deu",
+      "name": "5. Mooseksen kirja"
+    },
+    {
+      "id": "jos",
+      "name": "Joosua"
+    },
+    {
+      "id": "jdg",
+      "name": "Tuomarien Kirja"
+    },
+    {
+      "id": "rut",
+      "name": "Ruut"
+    },
+    {
+      "id": "1sa",
+      "name": "1. Samuelin kirja"
+    },
+    {
+      "id": "2sa",
+      "name": "2. Samuelin kirja"
+    },
+    {
+      "id": "1ki",
+      "name": "1. Kuningasten kirja"
+    },
+    {
+      "id": "2ki",
+      "name": "2. Kuningasten kirja"
+    },
+    {
+      "id": "1ch",
+      "name": "1. Aikakirja"
+    },
+    {
+      "id": "2ch",
+      "name": "2. Aikakirja"
+    },
+    {
+      "id": "ezr",
+      "name": "Esra"
+    },
+    {
+      "id": "neh",
+      "name": "Nehemia"
+    },
+    {
+      "id": "est",
+      "name": "Ester"
+    },
+    {
+      "id": "job",
+      "name": "Job"
+    },
+    {
+      "id": "psa",
+      "name": "Psalmit"
+    },
+    {
+      "id": "pro",
+      "name": "Sananlaskut"
+    },
+    {
+      "id": "ecc",
+      "name": "Saarnaaja"
+    },
+    {
+      "id": "sng",
+      "name": "Laulujen laulu"
+    },
+    {
+      "id": "isa",
+      "name": "Jesaja"
+    },
+    {
+      "id": "jer",
+      "name": "Jeremia"
+    },
+    {
+      "id": "lam",
+      "name": "Valitusvirret"
+    },
+    {
+      "id": "ezk",
+      "name": "Hesekiel"
+    },
+    {
+      "id": "dan",
+      "name": "Daniel"
+    },
+    {
+      "id": "hos",
+      "name": "Hoosea"
+    },
+    {
+      "id": "jol",
+      "name": "Jooel"
+    },
+    {
+      "id": "amo",
+      "name": "Aamos"
+    },
+    {
+      "id": "oba",
+      "name": "Obadja"
+    },
+    {
+      "id": "jon",
+      "name": "Joona"
+    },
+    {
+      "id": "mic",
+      "name": "Miika"
+    },
+    {
+      "id": "nam",
+      "name": "Nahum"
+    },
+    {
+      "id": "hab",
+      "name": "Habakuk"
+    },
+    {
+      "id": "zep",
+      "name": "Sefanja"
+    },
+    {
+      "id": "hag",
+      "name": "Haggai"
+    },
+    {
+      "id": "zec",
+      "name": "Sakarja"
+    },
+    {
+      "id": "mal",
+      "name": "Malakia"
+    },
+    {
+      "id": "mat",
+      "name": "Matteus"
+    },
+    {
+      "id": "mrk",
+      "name": "Markus"
+    },
+    {
+      "id": "luk",
+      "name": "Luukas"
+    },
+    {
+      "id": "jhn",
+      "name": "Johannes"
+    },
+    {
+      "id": "act",
+      "name": "Apostolien teot"
+    },
+    {
+      "id": "rom",
+      "name": "Roomalaiskirje"
+    },
+    {
+      "id": "1co",
+      "name": "1. Korinttilaiskirje"
+    },
+    {
+      "id": "2co",
+      "name": "2. Korinttilaiskirje"
+    },
+    {
+      "id": "gal",
+      "name": "Galatalaiskirje"
+    },
+    {
+      "id": "eph",
+      "name": "Efesolaiskirje"
+    },
+    {
+      "id": "php",
+      "name": "Filippiläiskirje"
+    },
+    {
+      "id": "col",
+      "name": "Kolossalaiskirje"
+    },
+    {
+      "id": "1th",
+      "name": "1. Tessalonikalaiskirje"
+    },
+    {
+      "id": "2th",
+      "name": "2. Tessalonikalaiskirje"
+    },
+    {
+      "id": "1ti",
+      "name": "1. Timoteuskirje"
+    },
+    {
+      "id": "2ti",
+      "name": "2. Timoteuskirje"
+    },
+    {
+      "id": "tit",
+      "name": "Tituskirje"
+    },
+    {
+      "id": "phm",
+      "name": "Filemonkirje"
+    },
+    {
+      "id": "heb",
+      "name": "Heprealaiskirje"
+    },
+    {
+      "id": "jas",
+      "name": "Jaakobin kirje"
+    },
+    {
+      "id": "1pe",
+      "name": "1. Pietarin kirje"
+    },
+    {
+      "id": "2pe",
+      "name": "2. Pietarin kirje"
+    },
+    {
+      "id": "1jn",
+      "name": "1. Johanneksen kirje"
+    },
+    {
+      "id": "2jn",
+      "name": "2. Johanneksen kirje"
+    },
+    {
+      "id": "3jn",
+      "name": "3. Johanneksen kirje"
+    },
+    {
+      "id": "jud",
+      "name": "Juudaksen kirje"
+    },
+    {
+      "id": "rev",
+      "name": "Ilmestyskirja"
+    }
+  ],
+  "default_version": 330,
+  "language": {
+    "id": "fin",
+    "name": "Suomi"
+  },
+  "versions": [
+    {
+      "full_name": "Finnish 1776",
+      "id": 60,
+      "name": "FI1776"
+    },
+    {
+      "full_name": "Finnish 1938",
+      "id": 61,
+      "name": "FINPR"
+    },
+    {
+      "full_name": "Kirkkoraamattu 1992",
+      "id": 330,
+      "name": "FB92"
+    },
+    {
+      "full_name": "Kirkkoraamattu 1933/38",
+      "id": 365,
+      "name": "FB38"
+    },
+    {
+      "full_name": "Raamattu Kansalle",
+      "id": 1745,
+      "name": "FINRK"
+    }
+  ]
+}

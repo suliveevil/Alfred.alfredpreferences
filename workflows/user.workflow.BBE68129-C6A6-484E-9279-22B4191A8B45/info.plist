@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.yangziy.yeelightbulb</string>
+	<key>connections</key>
+	<dict>
+		<key>F5C3592B-BAC7-4CE0-99E2-31E9829E0317</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B6CFDF61-79D6-4A74-B63A-D8D0A9F1E90C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>yangziy</string>
+	<key>description</key>
+	<string>Turn on/off a preset yeelight bulb</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>YeelightBulb</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>import sys, os
+import yeelight
+
+bulb = yeelight.Bulb(os.getenv('bulb_ip', ''))
+
+query = sys.argv[1]
+if query == "on":
+    bulb.turn_on()
+elif query == "off":
+    bulb.turn_off()</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B6CFDF61-79D6-4A74-B63A-D8D0A9F1E90C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>yee</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>import json, sys, os
+import yeelight
+
+bulb = yeelight.Bulb(os.getenv('bulb_ip', ''))
+current_status = bulb.get_properties()['power']
+
+items = []
+if current_status == u"on":
+    items.append({
+        "title": "Turn off",
+        "arg": "off",
+        "icon": {
+            "path": "turn_off.png"
+        }
+    })
+elif current_status == u"off":
+    items.append({
+        "title": "Turn on",
+        "arg": "on",
+        "icon": {
+            "path": "turn_on.png"
+        }
+    })
+else :
+    items.append({
+        "title": "Yeelight API is broken",
+        "arg": "null",
+        "icon": {
+            "path": "turn_off.png"
+        }
+    })
+
+result = {
+    'items': items
+}
+print(json.dumps(result))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>test.sh</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F5C3592B-BAC7-4CE0-99E2-31E9829E0317</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow is built upon the library skorokithakis/python-yeelight.
+
+https://github.com/skorokithakis/python-yeelight</string>
+	<key>uidata</key>
+	<dict>
+		<key>B6CFDF61-79D6-4A74-B63A-D8D0A9F1E90C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>F5C3592B-BAC7-4CE0-99E2-31E9829E0317</key>
+		<dict>
+			<key>xpos</key>
+			<integer>70</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<dict>
+		<key>bulb_ip</key>
+		<string></string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>bulb_ip</string>
+	</array>
+	<key>version</key>
+	<string>2.0</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

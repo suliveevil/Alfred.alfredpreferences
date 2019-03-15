@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.fpira.alfred.wf.randomstringgenerator</string>
+	<key>connections</key>
+	<dict>
+		<key>388DC505-9F97-4437-A5E6-E99DA7EB1397</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8F8D9E9F-E5C5-4C23-8EB8-3AD976143D09</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D8E61FDE-D129-4940-B153-9EF810425D61</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>388DC505-9F97-4437-A5E6-E99DA7EB1397</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>pirafrank</string>
+	<key>description</key>
+	<string>Generate random alpha-numeric string of given length and copies it to the clipboard</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Random String Generator</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>script</key>
+				<string>read a1 &lt;&lt;&lt; "{query}"
+echo -e "$( cat /dev/random | LC_CTYPE=C tr -dc "[:alpha:]0-9" | head -c $a1 )"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>388DC505-9F97-4437-A5E6-E99DA7EB1397</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>8F8D9E9F-E5C5-4C23-8EB8-3AD976143D09</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>randstr</string>
+				<key>subtext</key>
+				<string>Copy to clipboard given-length random string (e.g. randstr 20)</string>
+				<key>text</key>
+				<string>Random String Generator</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D8E61FDE-D129-4940-B153-9EF810425D61</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Credits: Icon image self-made by the author, Francesco Pira.
+
+LICENSE
+This workflow is released with GNU GPLv3 License by Francesco Pira (dev@fpira.com, fpira.com). Read the term of the license here http://www.gnu.org/licenses/gpl-3.0.html</string>
+	<key>uidata</key>
+	<dict>
+		<key>388DC505-9F97-4437-A5E6-E99DA7EB1397</key>
+		<dict>
+			<key>xpos</key>
+			<integer>370</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>8F8D9E9F-E5C5-4C23-8EB8-3AD976143D09</key>
+		<dict>
+			<key>xpos</key>
+			<integer>570</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>D8E61FDE-D129-4940-B153-9EF810425D61</key>
+		<dict>
+			<key>xpos</key>
+			<integer>170</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>fpira.com</string>
+</dict>
+</plist>

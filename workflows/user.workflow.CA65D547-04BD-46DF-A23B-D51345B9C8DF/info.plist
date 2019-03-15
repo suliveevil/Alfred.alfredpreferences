@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.fpira.alfred.wf.symlink</string>
+	<key>connections</key>
+	<dict>
+		<key>FF8E3BE3-2E94-4801-8A01-9AA8DE17340B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C4223A5A-A304-4030-AF73-8FF99B8D5C64</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>pirafrank</string>
+	<key>description</key>
+	<string>Create a symlink to the searched file/folder with the same name into the frontmost Finder window</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Create symlink</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>script</key>
+				<string>read a1 &lt;&lt;&lt; "{query}"
+
+if [[ -d "$a1" ]];then
+     TARGET_FOLDER="$(osascript -e 'tell application "Finder" to get the POSIX path of (target of front window as alias)')"
+     ln -s "$a1" "$TARGET_FOLDER$(basename "$a1")"
+elif [[ -f "$a1" ]];then
+     SOURCE="$a1"
+     FILENAME="${SOURCE##*/}"
+     TARGET_FOLDER="$(osascript -e 'tell application "Finder" to get the POSIX path of (target of front window as alias)')"
+     TARGET="$TARGET_FOLDER$FILENAME"
+     ln -s "$SOURCE" "$TARGET"
+else
+     osascript -e 'display alert "Sorry, I got messed up!"'
+     exit 1
+fi</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C4223A5A-A304-4030-AF73-8FF99B8D5C64</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>sym</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>scopes</key>
+				<array/>
+				<key>subtext</key>
+				<string>Symlink searched file to frontmost Finder dir</string>
+				<key>title</key>
+				<string>Create symlink</string>
+				<key>types</key>
+				<array/>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>FF8E3BE3-2E94-4801-8A01-9AA8DE17340B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Note:
+If no Finder window is open, the workflow does nothing.
+
+Icon just slightly modded by me. Credits to Apple.
+
+LICENSE
+This workflow is released with GNU GPLv3 License by Francesco Pira (francescopira.me@gmail.com, pirafrank.github.io). Read the term of the license here http://www.gnu.org/licenses/gpl-3.0.html</string>
+	<key>uidata</key>
+	<dict>
+		<key>C4223A5A-A304-4030-AF73-8FF99B8D5C64</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>FF8E3BE3-2E94-4801-8A01-9AA8DE17340B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>fpira.com</string>
+</dict>
+</plist>

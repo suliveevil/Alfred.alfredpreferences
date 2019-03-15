@@ -1,5 +1,6 @@
 <?php
 
+ini_set('display_errors', 0);
 ini_set('memory_limit', '-1');
 
 use CFPropertyList\CFPropertyList;
@@ -9,8 +10,8 @@ require_once 'workflows.php';
 
 class DevDocs {
 
-  private static $baseUrl = 'http://devdocs.io/';
-  private static $docUrl = 'http://maxcdn-docs.devdocs.io/';
+  private static $baseUrl = 'https://devdocs.io/';
+  private static $docUrl = 'https://docs.devdocs.io/';
   private static $cacheDirectory = 'cache/';
 
   private $workflows;
@@ -49,7 +50,7 @@ class DevDocs {
     $docFile = self::$cacheDirectory . 'docs.json';
     // Keep the docs in cache during 7 days
     if (!file_exists($docFile) || (filemtime($docFile) <= time() - 86400 * 7)) {
-      $docContent = $this->workflows->fetch('http://devdocs.io/docs/docs.json');
+      $docContent = $this->workflows->fetch(self::$baseUrl . 'docs/docs.json');
       file_put_contents($docFile, $docContent);
     } else {
       $docContent = file_get_contents($docFile);
@@ -114,12 +115,20 @@ class DevDocs {
       }
     }
 
+    if ((count($this->results[0]) === 0) && (count($this->results[1]) === 0) && (count($this->results[2]) === 0)) {
+      $this->results[0][] = (object) [
+        'name' => 'No results.',
+        'documentation' => $documentation
+      ];
+    }
+
   }
 
   private function render() {
     foreach ($this->results as $level => $results) {
       foreach ($results as $result) {
-        $this->workflows->result($result->name, self::$baseUrl . $result->documentation . '/' . $result->path, $result->name . ' (' . $result->type . ')', $result->path, $result->documentation . '.png', 'yes', $result->name);
+        $title = empty($result->type) ? $result->name : "$result->name ($result->type)";
+        $this->workflows->result($result->name, self::$baseUrl . $result->documentation . '/' . $result->path, $title, $result->path, $result->documentation . '.png', 'yes', $result->name);
       }
     }
     echo $this->workflows->toxml();

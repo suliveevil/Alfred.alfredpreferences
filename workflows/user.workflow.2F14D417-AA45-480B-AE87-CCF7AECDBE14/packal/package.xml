@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>System commands</name>
+  <version>1.0</version>
+  <bundle>com.joonaspaakko.syscommands</bundle>
+  <updated>1525687217</updated>
+  <file>system_commands.alfredworkflow</file>
+</workflow>

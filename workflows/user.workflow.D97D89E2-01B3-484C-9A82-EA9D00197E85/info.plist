@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.suliveevil.Yoink</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>0DFFF3F1-0D82-4CE6-880B-6EA7CD2EE723</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F3715744-26C9-4213-85F6-5298BA71C0E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>suliveevil</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Yoink</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>tell application "System Events"	-- tell application id "com.apple.finder"	tell application "Finder"		set theItems to selection		set filePath to (POSIX path of (the selection as alias))	end tell	set the clipboard to filePath	delay 0.1	do shell script "path=$(pbpaste);open -a Yoink $path"end tell</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F3715744-26C9-4213-85F6-5298BA71C0E6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>yoi</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Yoink</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0DFFF3F1-0D82-4CE6-880B-6EA7CD2EE723</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0DFFF3F1-0D82-4CE6-880B-6EA7CD2EE723</key>
+		<dict>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>F3715744-26C9-4213-85F6-5298BA71C0E6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>440</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://www.github.com/suliveevil</string>
+</dict>
+</plist>

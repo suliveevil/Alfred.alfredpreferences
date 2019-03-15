@@ -3,9 +3,21 @@
 . src/workflowHandler.sh
 . src/media.sh
 
+trim () {
+  str="$1"
+  match=" "
+  while [ "${str:0:${#match}}" == "$match" ]; do
+    str="${str:${#match}:${#str}}"
+  done
+  while [ "${str:$((${#str}-${#match}))}" == "$match" ]; do
+    str="${str:0:$((${#str} - ${#match}))}"
+  done
+  echo "$str"
+}
+
 getWifiState() {
   local INTERFACE=${1-$INTERFACE}
-  if [ "$(networksetup -getairportpower $INTERFACE | grep On)" != "" ]; then
+  if [ "$(networksetup -getairportpower "$INTERFACE" | grep On)" != "" ]; then
     echo 1
   else
     echo 0
@@ -89,14 +101,14 @@ getSSID() {
 # $1 = BSSID string
 padBSSID() {
   if [ ${#1} == 17 ]; then
-    echo $1
+    echo "$1"
   else
-    for PART in $(echo $1 | tr ":" "\n"); do
+    for PART in $(echo "$1" | tr ":" "\n"); do
       if [ "$skipFirst" != "" ]; then
         printf ":"
       fi
       skipFirst=true
-      printf "%02s" $PART
+      printf "%02s" "$PART"
     done
   fi
 }
@@ -104,7 +116,7 @@ padBSSID() {
 # $1 = airport -getinfo
 getBSSID() {
   local BSSID=$(echo "$1" | awk '/ BSSID/ {print substr($0, index($0, $2))}')
-  echo $(padBSSID $BSSID)
+  echo $(padBSSID "$BSSID")
 }
 
 # $1 = airport -getinfo
@@ -118,7 +130,7 @@ getGlobalIP() {
 
   local IP=$(dig +time=2 +tries=1 +short $RESOLVER)
   if [[ "$IP" =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
-    echo $IP
+    echo "$IP"
   fi
 }
 
@@ -142,7 +154,7 @@ getVPNInfo() {
     AP_ICON=$ICON_VPN
   fi
 
-  echo $STATE~$NAME~$TYPE~$AP_ICON
+  echo "$STATE"~"$NAME"~"$TYPE"~"$AP_ICON"
 }
 
 # $1 = networksetup -getdnsservers
@@ -154,18 +166,34 @@ getDNS() {
   fi
 }
 
+# $1 = line of dns config file
+# $2 = active dns list
+# $! = Separated string of dns config elements
+parseDNSLine() {
+  IFS=':' read -r -a ARRAY <<< "$1"
+  if [[ "${ARRAY[0]}" =~ ^# ]] || [ "${ARRAY[0]}" == "" ] || [ "${ARRAY[1]}" == "" ]; then
+    return
+  fi
+
+  local ID=$(trim "${ARRAY[0]}")
+  local DNS=$(echo "${ARRAY[1]}" | sed 's/ //g' | sed 's/,/ \/ /g')
+  local ICON=$ICON_DNS
+
+  if [ "$DNS" == "$2" ]; then
+    ICON=$ICON_DNS_USED
+    ID="$ID (used)"
+  fi
+
+  echo "$ID"~"$DNS"~"$ICON"
+}
+
 # $1 = networksetup -listpreferredwirelessnetworks
 # $! = Separated string of saved access points
 getSavedAPs() {
   while read -r line; do
-    #echo "$line" | sed -e 's/^[ \t\s\v]*//'
-    #echo "$line" | tr -d '\040\011\012\015'
-    # echo "$line" | tr -d '\040\011\015'
-    #echo "$line" | sed -e 's/^[\x01-\x1A]*//'
-
     OUTPUT=$OUTPUT~$line
   done <<< "$1"
-  echo ${OUTPUT:1}
+  echo "${OUTPUT:1}"
 }
 
 # $1 = List of elements
@@ -218,7 +246,7 @@ getAPDetails() {
     AP_ICON=$ICON_WIFI_LOCK_
   fi
 
-  AP_ICON="$AP_ICON"$(getWifiStrength $RSSI)"$ICON_END"
+  AP_ICON=$AP_ICON$(getWifiStrength "$RSSI")$ICON_END
 
-  echo $SSID~$BSSID~$RSSI~$CHANNEL~$SECURITY~$AP_ICON
+  echo "$SSID"~"$BSSID"~"$RSSI"~"$CHANNEL"~"$SECURITY"~"$AP_ICON"
 }

@@ -29,7 +29,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Alfred-PopClip</string>
+	<string>PopClip</string>
 	<key>objects</key>
 	<array>
 		<dict>

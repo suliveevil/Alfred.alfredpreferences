@@ -32,6 +32,32 @@
 				<false/>
 			</dict>
 		</array>
+		<key>CF33512D-1822-4C75-B6E5-B470EADDE192</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E2FBDE43-5D48-402E-8492-E721466549E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F3E21CCF-AB79-4431-AEB5-5E270EC9160D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E2FBDE43-5D48-402E-8492-E721466549E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>FE35CB12-A05F-4A7F-83C5-2F4AC3FBDC35</key>
 		<array>
 			<dict>
@@ -47,7 +73,7 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Hu Yingcong</string>
+	<string>Hu Yingcong(mod by suliveevil)</string>
 	<key>description</key>
 	<string>look up certain words in Eudic.app</string>
 	<key>disabled</key>
@@ -74,6 +100,27 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>FE35CB12-A05F-4A7F-83C5-2F4AC3FBDC35</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>eu</string>
+				<key>subtext</key>
+				<string>在欧路词典中搜索 "{query}"</string>
+				<key>text</key>
+				<string>seach for "{query}"</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2F3816D4-CBD0-4E1E-816B-7516CF9637AB</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -116,18 +163,54 @@ end alfred_script</string>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>eu</string>
+				<string>ddd</string>
 				<key>subtext</key>
-				<string>在欧路词典中搜索 "{query}"</string>
+				<string>Search in Eudic</string>
 				<key>text</key>
-				<string>seach for "{query}"</string>
+				<string>Eudic</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>2F3816D4-CBD0-4E1E-816B-7516CF9637AB</string>
+			<string>CF33512D-1822-4C75-B6E5-B470EADDE192</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>do shell script "open -b com.eusoft.eudic"tell application id "com.eusoft.eudic"	activate	show dic with word "{query}"end tell</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E2FBDE43-5D48-402E-8492-E721466549E6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>text</key>
+				<string>Eudic</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.fallback</string>
+			<key>uid</key>
+			<string>F3E21CCF-AB79-4431-AEB5-5E270EC9160D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -139,9 +222,9 @@ end alfred_script</string>
 		<key>2F3816D4-CBD0-4E1E-816B-7516CF9637AB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>80</integer>
+			<integer>70</integer>
 			<key>ypos</key>
-			<integer>290</integer>
+			<integer>140</integer>
 		</dict>
 		<key>B5174C20-64A8-4027-BAE7-235E0778850E</key>
 		<dict>
@@ -150,6 +233,13 @@ end alfred_script</string>
 			<key>ypos</key>
 			<integer>170</integer>
 		</dict>
+		<key>CF33512D-1822-4C75-B6E5-B470EADDE192</key>
+		<dict>
+			<key>xpos</key>
+			<integer>70</integer>
+			<key>ypos</key>
+			<integer>270</integer>
+		</dict>
 		<key>E00580CC-6D50-42F2-9673-D53416588AB0</key>
 		<dict>
 			<key>xpos</key>
@@ -157,12 +247,26 @@ end alfred_script</string>
 			<key>ypos</key>
 			<integer>140</integer>
 		</dict>
+		<key>E2FBDE43-5D48-402E-8492-E721466549E6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>470</integer>
+			<key>ypos</key>
+			<integer>270</integer>
+		</dict>
+		<key>F3E21CCF-AB79-4431-AEB5-5E270EC9160D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>70</integer>
+			<key>ypos</key>
+			<integer>400</integer>
+		</dict>
 		<key>FE35CB12-A05F-4A7F-83C5-2F4AC3FBDC35</key>
 		<dict>
 			<key>xpos</key>
-			<integer>80</integer>
+			<integer>70</integer>
 			<key>ypos</key>
-			<integer>140</integer>
+			<integer>10</integer>
 		</dict>
 	</dict>
 	<key>version</key>

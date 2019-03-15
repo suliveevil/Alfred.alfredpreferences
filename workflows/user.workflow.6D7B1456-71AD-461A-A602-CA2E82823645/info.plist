@@ -260,10 +260,6 @@ echo "${files_list}"</string>
 				<false/>
 				<key>focusedappvariablename</key>
 				<string></string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -283,8 +279,6 @@ echo "${files_list}"</string>
 			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
-				<key>keyword</key>
-				<string>run</string>
 				<key>subtext</key>
 				<string>Use `{}` for file placeholders if they’re not the last element</string>
 				<key>text</key>

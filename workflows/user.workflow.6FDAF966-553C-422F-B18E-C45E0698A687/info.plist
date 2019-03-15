@@ -32,19 +32,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>61B7AD2C-9B31-4478-B09F-6F6214942FC1</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>38FD5063-7AFF-4018-B9BB-A5A0290F6FCA</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Bogdan Vitoc</string>
@@ -56,29 +43,6 @@
 	<string>Send Screenshot to Yoink</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>echo -n "$(date '+%m-%d-%Y-%H.%M.%S')"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>38FD5063-7AFF-4018-B9BB-A5A0290F6FCA</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -116,6 +80,29 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>echo -n "$(date '+%m-%d-%Y-%H.%M.%S')"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>38FD5063-7AFF-4018-B9BB-A5A0290F6FCA</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
 				<string>on run	tell me		try			do shell script "pgrep Yoink"		on error			tell application "System Events" to set activeApp to name of first application process whose frontmost is true			do shell script "open /Applications/Yoink.app"			activate application activeApp		end try				set fileName to "{query}.jpg"		set folderPath to "~/Documents/Yoink"		set filePath to folderPath &amp; "/" &amp; fileName				do shell script "[ -d " &amp; folderPath &amp; " ] || mkdir " &amp; folderPath				try			do shell script ("screencapture -i " &amp; filePath)		on error			beep
@@ -134,27 +121,6 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>keyword</key>
-				<string>ssy</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Send Screenshot to Yoink</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>61B7AD2C-9B31-4478-B09F-6F6214942FC1</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -170,16 +136,9 @@
 		<key>53D80A3B-AFB6-4213-A963-773CD05154D1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>80</integer>
+			<integer>170</integer>
 			<key>ypos</key>
 			<integer>110</integer>
-		</dict>
-		<key>61B7AD2C-9B31-4478-B09F-6F6214942FC1</key>
-		<dict>
-			<key>xpos</key>
-			<integer>80</integer>
-			<key>ypos</key>
-			<integer>240</integer>
 		</dict>
 		<key>D674A481-E06E-4346-A50F-FF5413CCFD04</key>
 		<dict>

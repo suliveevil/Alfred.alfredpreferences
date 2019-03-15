@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Random Pin Generator</name>
+  <version>1.0</version>
+  <bundle>com.fpira.alfred.wf.randompingenerator</bundle>
+  <updated>1466156896</updated>
+  <file>random_pin_generator.alfredworkflow</file>
+</workflow>

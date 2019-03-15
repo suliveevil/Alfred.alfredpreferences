@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>backgroundcolor</key>
+	<array>
+		<real>0.24843065440654755</real>
+		<real>0.0060919951647520065</real>
+		<real>0.03532053530216217</real>
+	</array>
+	<key>iconid</key>
+	<string>B795C827-4689-4982-BFDC-1B89DB5589ED</string>
+	<key>iconisuserspecified</key>
+	<false/>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>actionconfig</key>
+			<dict>
+				<key>autoworkflowuid</key>
+				<true/>
+				<key>triggerid</key>
+				<string>tesla-climate-on</string>
+			</dict>
+			<key>actionuid</key>
+			<string>remote.alfred.runworkflow</string>
+			<key>buttoniconid</key>
+			<string>9A433EA7-568E-4350-A6FB-22E1E33CEF7C</string>
+			<key>buttonlabel</key>
+			<string>Climate On</string>
+			<key>itemuid</key>
+			<string>504EF2E4-AFAA-4D2F-92AF-1B61B0836F4B</string>
+		</dict>
+		<dict>
+			<key>actionconfig</key>
+			<dict>
+				<key>autoworkflowuid</key>
+				<true/>
+				<key>triggerid</key>
+				<string>tesla-climate-off</string>
+			</dict>
+			<key>actionuid</key>
+			<string>remote.alfred.runworkflow</string>
+			<key>buttoniconid</key>
+			<string>0557662F-BD0B-43D2-961C-BDC1F331CDD9</string>
+			<key>buttonlabel</key>
+			<string>Climate Off</string>
+			<key>itemuid</key>
+			<string>F76CEAF7-DBA5-44CD-8E58-7DAA40C146CE</string>
+		</dict>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+	</array>
+	<key>subtitle</key>
+	<string>Control Your Tesla</string>
+	<key>title</key>
+	<string>Tesla</string>
+</dict>
+</plist>

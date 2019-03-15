@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>io.humanfarm</string>
+	<key>connections</key>
+	<dict>
+		<key>81361377-35E3-426B-BB86-95924C7EAF83</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C6C2A052-231A-4088-8BE1-AB8C934102AA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C6C2A052-231A-4088-8BE1-AB8C934102AA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5A71E402-A8B6-42CC-B82A-E2355084D9BE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jeffrey Smith</string>
+	<key>description</key>
+	<string>Switches selected characters to another language</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Typed characters language Switcher</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>81361377-35E3-426B-BB86-95924C7EAF83</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{clipboard:2}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>5A71E402-A8B6-42CC-B82A-E2355084D9BE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+--switch language
+tell application "System Events" to key code 49 using control down
+--creates 2 language lists
+
+set firstChar to text 1 thru 1 of q
+
+set enlist to "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ[]{};':,.&lt;§±&gt;?#$ˆ&amp;@"
+set rulist to "фисвуапршолдьтщзйкыегмцчняФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯхъХЪжэЖбюБёЁЮ,№;:?\""
+
+--get first character compare to enlist
+set matches to offset of firstChar in enlist
+
+
+--decides english to russian or russian to english
+set rutoen to true
+
+if (matches &gt; 0) then
+	set rutoen to false
+	
+	set outputlist to rulist
+	set inputlist to enlist
+	
+	
+end if
+
+
+
+
+
+if rutoen then
+	
+	--Russian to English list swap
+	
+	set outputlist to enlist
+	set inputlist to rulist
+	
+	
+end if
+
+set newString to {}
+considering case
+repeat with theChar in q
+	set o to offset of theChar in inputlist
+	if o is 0 then
+		set end of newString to contents of theChar
+	else
+		set end of newString to character o of outputlist
+	end if
+end repeat
+end considering 
+
+
+
+set the clipboard to newString as string
+--keystroke command+v - paste from clipboard
+
+tell application "System Events" to key code 9 using command down
+
+	
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>1</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>C6C2A052-231A-4088-8BE1-AB8C934102AA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>5A71E402-A8B6-42CC-B82A-E2355084D9BE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>600</integer>
+			<key>ypos</key>
+			<integer>130</integer>
+		</dict>
+		<key>81361377-35E3-426B-BB86-95924C7EAF83</key>
+		<dict>
+			<key>xpos</key>
+			<integer>160</integer>
+			<key>ypos</key>
+			<integer>130</integer>
+		</dict>
+		<key>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>340</integer>
+			<key>ypos</key>
+			<integer>130</integer>
+		</dict>
+		<key>C6C2A052-231A-4088-8BE1-AB8C934102AA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>510</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>humanfarm.io</string>
+</dict>
+</plist>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>org.codegrower.ToggleGreyScale</string>
+	<key>connections</key>
+	<dict>
+		<key>0FF02387-6375-4B82-8DE2-5E624F259777</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>11E1D42B-D188-4145-94A6-21BA02BF3C4C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>90ECBCE0-3E28-46D6-9A44-3A5CCFE1E0D3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0FF02387-6375-4B82-8DE2-5E624F259777</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BC5135D9-51B5-4FA8-A480-FFB63F8AA4E8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0FF02387-6375-4B82-8DE2-5E624F259777</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Niels Bom</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<true/>
+	<key>name</key>
+	<string>Toggle Greyscale</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>on run
+
+tell application "System Preferences"	activate	reveal anchor "Seeing_Display" of pane id "com.apple.preference.universalaccess"end telltell application "System Events" to tell process "System Preferences"	repeat until exists of checkbox "Use greyscale" of group 1 of window "Accessibility"		delay 0.1	end repeat	click the checkbox "Use greyscale" of group 1 of window "Accessibility"end telltell application "System Preferences"	quitend tell
+
+end run</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0FF02387-6375-4B82-8DE2-5E624F259777</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>BC5135D9-51B5-4FA8-A480-FFB63F8AA4E8</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>Greyscale has been toggled</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>11E1D42B-D188-4145-94A6-21BA02BF3C4C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>grey</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Toggle Greyscale</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>90ECBCE0-3E28-46D6-9A44-3A5CCFE1E0D3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Inspired by: http://www.alfredforum.com/topic/4133-toggle-do-not-disturb/
+Script from: https://gist.github.com/Zettt/fd9979100d4603e548d6</string>
+	<key>uidata</key>
+	<dict>
+		<key>0FF02387-6375-4B82-8DE2-5E624F259777</key>
+		<dict>
+			<key>xpos</key>
+			<integer>510</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>11E1D42B-D188-4145-94A6-21BA02BF3C4C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>680</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>90ECBCE0-3E28-46D6-9A44-3A5CCFE1E0D3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>170</integer>
+			<key>ypos</key>
+			<integer>190</integer>
+		</dict>
+		<key>BC5135D9-51B5-4FA8-A480-FFB63F8AA4E8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>170</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>codegrower.org</string>
+</dict>
+</plist>
