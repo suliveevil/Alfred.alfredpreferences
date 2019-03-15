@@ -4,8 +4,6 @@
 <dict>
 	<key>arrowsForFolderNavigation</key>
 	<true/>
-	<key>homeFolder</key>
-	<integer>3</integer>
 	<key>returnToOpenFolders</key>
 	<true/>
 </dict>

@@ -5,6 +5,6 @@
 	<key>enabled</key>
 	<true/>
 	<key>path</key>
-	<string>/allmyFiles</string>
+	<string>/allmyfiles/</string>
 </dict>
 </plist>
