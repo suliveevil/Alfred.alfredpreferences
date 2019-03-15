@@ -1,0 +1,19 @@
+{
+	"refresh-done": {
+		"version": "1.2.0",
+		"data": true
+	},
+	"validOutput": {
+		"version": "1.2.0",
+		"data": "true"
+	},
+	"new-profile": {
+		"version": "1.2.0",
+		"data": false
+	},
+	"start-PID": {
+		"timestamp": 1551388548195,
+		"version": "1.2.0",
+		"data": 6216
+	}
+}
