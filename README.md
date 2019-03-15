@@ -8,7 +8,7 @@ my Alfred.alfredpreferences folder
 </p></details>
 ## General 通用
 
--[x] Launch Alfred at login
+- [x] Launch Alfred at login
 
 Alfred hotkey：<kbd>⌥</kbd> <kbd>Space</kbd>
 
