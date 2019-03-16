@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Bear-Typora</name>
+  <version>0.0.1</version>
+  <bundle>com.alfredapp.beartypora</bundle>
+  <updated>1549105663</updated>
+  <file>bear-typora.alfredworkflow</file>
+</workflow>

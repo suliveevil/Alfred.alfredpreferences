@@ -84,6 +84,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>608107B3-75E1-4D6A-B082-4583B3AED42D</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>gh</string>
+			<key>text</key>
+			<string>GitHub Search</string>
+			<key>url</key>
+			<string>https://www.github.com/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>8D26F07F-827F-42A5-AC5E-DD67F41A2C7B</key>
 		<dict>
 			<key>enabled</key>

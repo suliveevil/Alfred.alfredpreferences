@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.beartypora</string>
+	<key>connections</key>
+	<dict>
+		<key>2239838A-F5B3-464E-896E-4785059671CC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>943F75EF-2CA1-40A0-B10E-89A0C4647DDB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3A83DCE0-7733-4C95-ABBB-5640A5C75E83</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3E190D46-BF0A-4AA1-9150-7D0BA88F39D9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>50E32EFE-009C-4401-9FE6-835A099C1DCA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CCC93EB0-FB32-4D38-AF4F-6FD5392DC0E4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>943F75EF-2CA1-40A0-B10E-89A0C4647DDB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3A83DCE0-7733-4C95-ABBB-5640A5C75E83</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CCC93EB0-FB32-4D38-AF4F-6FD5392DC0E4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2239838A-F5B3-464E-896E-4785059671CC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>jmttis</string>
+	<key>description</key>
+	<string>Edit Bear notes in Typora</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Bear-Typora</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>tell application "Typora.App" to activate
+
+delay 0.7
+
+tell application "System Events"
+    keystroke "f" using {command down, control down}
+end tell
+
+
+
+delay 0.2
+
+tell application "Typora.App" to activate
+
+tell application "System Events"
+    keystroke "L" using {command down}
+end tell
+
+
+
+repeat until application "Typora.App" is not running    
+	delay 1
+end repeat
+
+tell application "Bear.App" to activate</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3A83DCE0-7733-4C95-ABBB-5640A5C75E83</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>$python_path $export_sync_script</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CCC93EB0-FB32-4D38-AF4F-6FD5392DC0E4</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>$python_path $export_sync_script</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3E190D46-BF0A-4AA1-9150-7D0BA88F39D9</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>tt</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Open current Bear note in Typora</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>50E32EFE-009C-4401-9FE6-835A099C1DCA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import os
+import subprocess
+import sys
+
+
+def main(args):
+    base_dir = str(os.environ['md_base_dir'])
+
+    for dirpath, dirnames, filenames in os.walk(base_dir):
+        for filename in [f for f in filenames if f.endswith(".md")]:
+            path = os.path.join(base_dir, dirpath, filename)
+            if os.path.isfile(path):
+                with open(path) as f:
+                    for line in f:
+                        if args[1] in line:
+                            matched_path = path
+                            print('found string in file %s' % matched_path)
+
+    print(matched_path)
+    
+    subprocess.call(
+        ["/usr/bin/open", "-a", "/Applications/Typora.app", matched_path])
+
+
+if __name__ == '__main__':
+    main(sys.argv)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>943F75EF-2CA1-40A0-B10E-89A0C4647DDB</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+tell application "Bear.App" to activate
+
+
+delay 0.1
+
+tell application "System Events"
+    keystroke "i" using {command down, option down, shift down}
+end tell
+
+
+delay 0.1
+
+set noteID to the clipboard
+
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>2239838A-F5B3-464E-896E-4785059671CC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Edit Bear notes in Typora. This becomes useful if notes contain math expressions, which are currently not rendered in Bear. 
+
+@markgrovs wrote a Bear-Markdown-Export script [1], exporting notes from the Bear database to Markdown. It allows to synchronise edited notes back into the Bear database. 
+
+When triggered, this workflow does the following:
+1. Call the export/sync script.
+2. Select the ID of the currently active note in Bear.
+3. Search through the exported markdown notes to find the matching note.
+4. Open the note in Typora.
+5. Change Typora to fullscreen mode.
+6. Watch out for Typora being closed: once that happens, the export/sync script is triggered again so that the changes are reflected in Bear.
+
+The workflow uses a combination of Python and AppleScript to get this done. It's hacked together quickly. Feel free to fork and improve.
+
+To use this workflow, set up Bear-Markdown-Export [1], install Typora, and edit the environment variables of the workflow.
+
+[1]: https://github.com/markgrovs/Bear-Markdown-Export</string>
+	<key>uidata</key>
+	<dict>
+		<key>2239838A-F5B3-464E-896E-4785059671CC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>420</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>3A83DCE0-7733-4C95-ABBB-5640A5C75E83</key>
+		<dict>
+			<key>xpos</key>
+			<integer>750</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>3E190D46-BF0A-4AA1-9150-7D0BA88F39D9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>920</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>50E32EFE-009C-4401-9FE6-835A099C1DCA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>70</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>943F75EF-2CA1-40A0-B10E-89A0C4647DDB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>580</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>CCC93EB0-FB32-4D38-AF4F-6FD5392DC0E4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>250</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<dict>
+		<key>export_sync_script</key>
+		<string>/path/to/bear_export_sync.py</string>
+		<key>md_base_dir</key>
+		<string>/path/to/BearNotes</string>
+		<key>python_path</key>
+		<string>/path/to/bin/python</string>
+	</dict>
+	<key>version</key>
+	<string>0.0.1</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
