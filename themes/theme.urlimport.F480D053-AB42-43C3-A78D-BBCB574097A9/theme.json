@@ -32,7 +32,7 @@
       "text" : {
         "size" : 36,
         "colorSelected" : "#000000FF",
-        "font" : "Helvetica",
+        "font" : "System",
         "color" : "#E0E0E0FF"
       },
       "backgroundSelected" : "#B5D5FFFF"
@@ -43,7 +43,7 @@
       "width" : 680,
       "borderPadding" : 10,
       "borderColor" : "#19191900",
-      "blur" : 0,
+      "blur" : 20,
       "roundness" : 10,
       "paddingVertical" : 10
     },
