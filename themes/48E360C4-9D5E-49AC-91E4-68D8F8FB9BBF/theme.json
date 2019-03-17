@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 4,
+      "subtext" : {
+        "size" : 11,
+        "colorSelected" : "#797979FF",
+        "font" : "System Light",
+        "color" : "#AAAAAAFF"
+      },
+      "shortcut" : {
+        "size" : 13,
+        "colorSelected" : "#AAAAAAFF",
+        "font" : "Helvetica",
+        "color" : "#008EF1FF"
+      },
+      "backgroundSelected" : "#F4F4F4FF",
+      "text" : {
+        "size" : 13,
+        "colorSelected" : "#5E5E5EFF",
+        "font" : "System Light",
+        "color" : "#5E5E5EFF"
+      },
+      "iconPaddingHorizontal" : 5,
+      "paddingVertical" : 0,
+      "iconSize" : 40
+    },
+    "search" : {
+      "paddingVertical" : 2,
+      "background" : "#F1F1F1FF",
+      "spacing" : 10,
+      "text" : {
+        "size" : 24,
+        "colorSelected" : "#0096FFFF",
+        "font" : "System Light",
+        "color" : "#0079D0FF"
+      },
+      "backgroundSelected" : "#0096FF42"
+    },
+    "window" : {
+      "color" : "#FFFFFFFF",
+      "paddingHorizontal" : 10,
+      "width" : 620,
+      "borderPadding" : 10,
+      "borderColor" : "#19191900",
+      "blur" : 0,
+      "roundness" : 3,
+      "paddingVertical" : 10
+    },
+    "credit" : "Dean",
+    "separator" : {
+      "color" : "#D5D5D589",
+      "thickness" : 1
+    },
+    "scrollbar" : {
+      "color" : "#D5D5D5FF",
+      "thickness" : 2
+    },
+    "name" : "Pwnrs (v2)"
+  }
+}

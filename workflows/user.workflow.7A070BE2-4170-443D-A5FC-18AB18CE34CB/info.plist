@@ -10,7 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>D7E96C4B-C158-4A5C-9D3A-7C6C37A6557D</string>
+				<string>D7A8FF94-E45E-4FD4-BA1A-11237326A0E1</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -118,7 +118,7 @@ apps = Pathname('/Applications').children
 script_filter_items = []
 
 apps.each do |app|
-  version = open3.capture2('mdls', '-raw', '-name', 'kMDItemVersion', app).first
+  version = Open3.capture2('mdls', '-raw', '-name', 'kMDItemVersion', app).first
   next if version == '(null)'
   name = File.basename(app, '.app')
   script_filter_items.push(title: name, subtitle: version, arg: version, icon: { type: 'fileicon', path: app })
@@ -256,26 +256,21 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>acceptsmulti</key>
 				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string># mdls -raw -name kMDItemVersion "${1}"
-mdls -name kMDItemVersion "${1}"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>filetypes</key>
+				<array>
+					<string>com.apple.application-bundle</string>
+				</array>
+				<key>name</key>
+				<string>App version</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
-			<string>D7E96C4B-C158-4A5C-9D3A-7C6C37A6557D</string>
+			<string>778BD714-0E96-4EA4-A4FD-751D05C92D2D</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -293,21 +288,25 @@ mdls -name kMDItemVersion "${1}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
+				<key>concurrently</key>
 				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>com.apple.application-bundle</string>
-				</array>
-				<key>name</key>
-				<string>App version</string>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>mdls -raw -name kMDItemVersion "${1}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>778BD714-0E96-4EA4-A4FD-751D05C92D2D</string>
+			<string>D7E96C4B-C158-4A5C-9D3A-7C6C37A6557D</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -327,44 +326,44 @@ If the app you want to check the version of is located anywhere else, you can fi
 			<key>note</key>
 			<string>OneUpdater</string>
 			<key>xpos</key>
-			<integer>890</integer>
+			<integer>580</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>20</integer>
 		</dict>
 		<key>56E911C8-B422-41A5-B703-DBA1649E1DA1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>50</integer>
+			<integer>30</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>20</integer>
 		</dict>
 		<key>778BD714-0E96-4EA4-A4FD-751D05C92D2D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>60</integer>
+			<integer>30</integer>
 			<key>ypos</key>
-			<integer>360</integer>
+			<integer>160</integer>
 		</dict>
 		<key>79EAF480-9E98-4ED6-A0BC-7162FC442749</key>
 		<dict>
 			<key>xpos</key>
-			<integer>590</integer>
+			<integer>380</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>160</integer>
 		</dict>
 		<key>D7A8FF94-E45E-4FD4-BA1A-11237326A0E1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>580</integer>
+			<integer>380</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>20</integer>
 		</dict>
 		<key>D7E96C4B-C158-4A5C-9D3A-7C6C37A6557D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>310</integer>
+			<integer>200</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>160</integer>
 		</dict>
 	</dict>
 	<key>version</key>

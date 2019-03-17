@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 8,
+      "subtext" : {
+        "size" : 13,
+        "colorSelected" : "#FFFFFFE5",
+        "font" : "System",
+        "color" : "#0000008C"
+      },
+      "shortcut" : {
+        "size" : 15,
+        "colorSelected" : "#FFFFFFE5",
+        "font" : "System",
+        "color" : "#2B8FFC99"
+      },
+      "backgroundSelected" : "#2B8FFCFF",
+      "text" : {
+        "size" : 18,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System",
+        "color" : "#000000BF"
+      },
+      "iconPaddingHorizontal" : 16,
+      "paddingVertical" : 6,
+      "iconSize" : 44
+    },
+    "search" : {
+      "paddingVertical" : 10,
+      "background" : "#FFFFFF00",
+      "spacing" : 0,
+      "text" : {
+        "size" : 32,
+        "colorSelected" : "#000000FF",
+        "font" : "System Light",
+        "color" : "#000000FF"
+      },
+      "backgroundSelected" : "#B2D7FFFF"
+    },
+    "window" : {
+      "color" : "#FFFFFFD8",
+      "paddingHorizontal" : 0,
+      "width" : 700,
+      "borderPadding" : 0,
+      "borderColor" : "#00000000",
+      "blur" : 40,
+      "roundness" : 8,
+      "paddingVertical" : 0
+    },
+    "credit" : "Diego Giorgini",
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#7E7F7EFF",
+      "thickness" : 3
+    },
+    "name" : "Spacious"
+  }
+}
