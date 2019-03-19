@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.suliveevil.newFile</string>
+	<key>connections</key>
+	<dict>
+		<key>A29022F3-15A6-4BA4-A872-FA0F1B7E26DC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8805A4EA-BEF8-410F-AC6C-30F16EEDA0C6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>suliveevil</string>
+	<key>description</key>
+	<string>新建文件并打开</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>新建文件</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>new</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>新建文件</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A29022F3-15A6-4BA4-A872-FA0F1B7E26DC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+--tell application "Finder"
+--set selection to make new file at (get insertion location)
+--end tell
+tell application "Finder" to set currentFolder to insertion location as aliasset newfilename to ""display dialog "请输入包含后缀的完整文件名" default answer newfilename buttons {"取消", "确定"} default button 2if button returned of result is "确定" then    set newfilename to text returned of the result    set currentFile to POSIX path of currentFolder &amp; newfilename    do shell script "touch \"" &amp; currentFile &amp; "\";open \"" &amp; currentFile &amp; "\""end if
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>8805A4EA-BEF8-410F-AC6C-30F16EEDA0C6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>8805A4EA-BEF8-410F-AC6C-30F16EEDA0C6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>470</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
+		<key>A29022F3-15A6-4BA4-A872-FA0F1B7E26DC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>160</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://www.github.com/suliveevil</string>
+</dict>
+</plist>

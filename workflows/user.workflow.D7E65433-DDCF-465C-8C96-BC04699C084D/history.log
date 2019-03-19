@@ -6,3 +6,4 @@
 {"title": "句号", "subtitle": "An end", "arg": "句号$%An end$%An end$%$%",         "icon": "icon.png"}
 {"title": "life", "subtitle": "生活", "arg": "life$%生活$%life$%$%",         "icon": "icon.png"}
 {"title": "撤销", "subtitle": "undo", "arg": "撤销$%undo$%undo$%$%",         "icon": "icon.png"}
+{"title": "实现", "subtitle": "implementation", "arg": "实现$%implementation$%implementation$%$%",         "icon": "icon.png"}
