@@ -27,7 +27,7 @@
 	<key>description</key>
 	<string>Alfred Accent Color Switch + DarkMode Toggle</string>
 	<key>disabled</key>
-	<false/>
+	<true/>
 	<key>name</key>
 	<string>Mojave Themes Switcher</string>
 	<key>objects</key>
@@ -42,7 +42,7 @@
 				<key>fixedorder</key>
 				<false/>
 				<key>items</key>
-				<string>[{"title":"Toggle","subtitle":"Switch between Dark &amp; Light Themes"},{"imagefile":"839a804b7bca096d0be56899ce59de137448dc33.png","title":"Blue","arg":"Blue","subtitle":"Blue Accent Color"},{"imagefile":"ea165466c081c7b637b86f84ea08c8190d5c3299.png","title":"Purple","arg":"Purple","subtitle":"Purple Accent Color"},{"imagefile":"532c51e69231ad0ee6e770010c0f82408fcfa892.png","title":"Pink","arg":"Pink","subtitle":"Pink Accent Color"},{"imagefile":"c62a583b90701277a41eed47d082ae0857fa07bc.png","title":"Red","arg":"Red","subtitle":"Red Accent Color"},{"imagefile":"1eff2688356bdef7f4dc7464f99d25b802cb635e.png","title":"Orange","arg":"Orange","subtitle":"Orange Accent Color"},{"imagefile":"0f26da0c006cbf62629472d8afb62de58ccc326a.png","title":"Yellow","arg":"Yellow","subtitle":"Yellow Accent Color"},{"imagefile":"53d02c40ef9e6679f9c7edc8d4fb28421179f40a.png","title":"Green","arg":"Green","subtitle":"Green Accent Color"},{"imagefile":"138d099d7d2f8c9dcb58042f82bda469766786cd.png","title":"Gray","arg":"Gray","subtitle":"Gray Accent Color"}]</string>
+				<string>[{"title":"Toggle","subtitle":"Switch between Dark &amp; Light Themes"},{"imagefile":"839a804b7bca096d0be56899ce59de137448dc33.png","title":"Blue","arg":"Blue","subtitle":"Blue Accent Color"},{"imagefile":"ea165466c081c7b637b86f84ea08c8190d5c3299.png","title":"Purple","arg":"Purple","subtitle":"Purple Accent Color"},{"imagefile":"532c51e69231ad0ee6e770010c0f82408fcfa892.png","title":"Pink","arg":"Pink","subtitle":"Pink Accent Color"},{"imagefile":"c62a583b90701277a41eed47d082ae0857fa07bc.png","title":"Red","arg":"Red","subtitle":"Red Accent Color"},{"imagefile":"1eff2688356bdef7f4dc7464f99d25b802cb635e.png","title":"Orange","arg":"Orange","subtitle":"Orange Accent Color"},{"imagefile":"0f26da0c006cbf62629472d8afb62de58ccc326a.png","title":"Yellow","arg":"Yellow","subtitle":"Yellow Accent Color"},{"imagefile":"53d02c40ef9e6679f9c7edc8d4fb28421179f40a.png","title":"Green","arg":"Green","subtitle":"Green Accent Color"},{"imagefile":"138d099d7d2f8c9dcb58042f82bda469766786cd.png","title":"Gray","arg":"Gray","subtitle":"Gray Accent Color"},{"title":"ultimate macOS"}]</string>
 				<key>keyword</key>
 				<string>theme</string>
 				<key>runningsubtext</key>

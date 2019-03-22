@@ -7,3 +7,20 @@
 {"title": "life", "subtitle": "生活", "arg": "life$%生活$%life$%$%",         "icon": "icon.png"}
 {"title": "撤销", "subtitle": "undo", "arg": "撤销$%undo$%undo$%$%",         "icon": "icon.png"}
 {"title": "实现", "subtitle": "implementation", "arg": "实现$%implementation$%implementation$%$%",         "icon": "icon.png"}
+{"title": "输入法", "subtitle": "The input method", "arg": "输入法$%The input method$%The input method$%$%",         "icon": "icon.png"}
+{"title": "修正错误", "subtitle": "Correct mistakes", "arg": "修正错误$%Correct mistakes$%Correct mistakes$%$%",         "icon": "icon.png"}
+{"title": "修正错误", "subtitle": "Correct mistakes", "arg": "修正错误$%Correct mistakes$%Correct mistakes$%$%",         "icon": "icon.png"}
+{"title": "介绍", "subtitle": "introduce", "arg": "介绍$%introduce$%introduce$%$%",         "icon": "icon.png"}
+{"title": "evoke", "subtitle": "唤起", "arg": "evoke$%唤起$%evoke$%$%",         "icon": "icon.png"}
+{"title": "大多数", "subtitle": "Most of the", "arg": "大多数$%Most of the$%Most of the$%$%",         "icon": "icon.png"}
+{"title": "大多数情况下", "subtitle": "In most cases", "arg": "大多数情况下$%In most cases$%In most cases$%$%",         "icon": "icon.png"}
+{"title": "大多数情况下", "subtitle": "In most cases", "arg": "大多数情况下$%In most cases$%In most cases$%$%",         "icon": "icon.png"}
+{"title": "连续", "subtitle": "continuous", "arg": "连续$%continuous$%continuous$%$%",         "icon": "icon.png"}
+{"title": "连续", "subtitle": "continuous", "arg": "连续$%continuous$%continuous$%$%",         "icon": "icon.png"}
+{"title": "连", "subtitle": "even", "arg": "连$%even$%even$%$%",         "icon": "icon.png"}
+{"title": "符号", "subtitle": "symbol", "arg": "符号$%symbol$%symbol$%$%",         "icon": "icon.png"}
+{"title": "d", "subtitle": "d", "arg": "d$%d$%d$%$%",         "icon": "icon.png"}
+{"title": "定制", "subtitle": "custom", "arg": "定制$%custom$%custom$%$%",         "icon": "icon.png"}
+{"title": "特制版", "subtitle": "Special edition", "arg": "特制版$%Special edition$%Special edition$%$%",         "icon": "icon.png"}
+{"title": "特制", "subtitle": "special", "arg": "特制$%special$%special$%$%",         "icon": "icon.png"}
+{"title": "特", "subtitle": ",", "arg": "特$%,$%,$%$%",         "icon": "icon.png"}
