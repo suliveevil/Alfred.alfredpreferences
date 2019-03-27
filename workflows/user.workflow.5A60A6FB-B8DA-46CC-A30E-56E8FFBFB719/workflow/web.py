@@ -77,10 +77,8 @@ RESPONSES = {
 def str_dict(dic):
     """Convert keys and values in ``dic`` into UTF-8-encoded :class:`str`.
 
-    :param dic: Mapping of Unicode strings
-    :type dic: dict
-    :returns: Dictionary containing only UTF-8 strings
-    :rtype: dict
+    :param dic: :class:`dict` of Unicode strings
+    :returns: :class:`dict`
 
     """
     if isinstance(dic, CaseInsensitiveDictionary):
@@ -193,7 +191,7 @@ class Response(object):
 
         :param request: :class:`urllib2.Request` instance
         :param stream: Whether to stream response or retrieve it all at once
-        :type stream: bool
+        :type stream: ``bool``
 
         """
         self.request = request
@@ -265,7 +263,7 @@ class Response(object):
         """Decode response contents as JSON.
 
         :returns: object decoded from JSON
-        :rtype: list, dict or unicode
+        :rtype: :class:`list` / :class:`dict`
 
         """
         return json.loads(self.content, self.encoding or 'utf-8')
@@ -274,8 +272,7 @@ class Response(object):
     def encoding(self):
         """Text encoding of document or ``None``.
 
-        :returns: Text encoding if found.
-        :rtype: str or ``None``
+        :returns: :class:`str` or ``None``
 
         """
         if not self._encoding:
@@ -288,7 +285,7 @@ class Response(object):
         """Raw content of response (i.e. bytes).
 
         :returns: Body of HTTP response
-        :rtype: str
+        :rtype: :class:`str`
 
         """
         if not self._content:
@@ -313,7 +310,7 @@ class Response(object):
         itself, the encoded response body will be returned instead.
 
         :returns: Body of HTTP response
-        :rtype: unicode or str
+        :rtype: :class:`unicode` or :class:`str`
 
         """
         if self.encoding:
@@ -327,9 +324,9 @@ class Response(object):
         .. versionadded:: 1.6
 
         :param chunk_size: Number of bytes to read into memory
-        :type chunk_size: int
+        :type chunk_size: ``int``
         :param decode_unicode: Decode to Unicode using detected encoding
-        :type decode_unicode: bool
+        :type decode_unicode: ``Boolean``
         :returns: iterator
 
         """
@@ -409,7 +406,7 @@ class Response(object):
         """Get encoding from HTTP headers or content.
 
         :returns: encoding or `None`
-        :rtype: unicode or ``None``
+        :rtype: ``unicode`` or ``None``
 
         """
         headers = self.raw.info()
@@ -461,30 +458,29 @@ def request(method, url, params=None, data=None, headers=None, cookies=None,
     """Initiate an HTTP(S) request. Returns :class:`Response` object.
 
     :param method: 'GET' or 'POST'
-    :type method: unicode
+    :type method: ``unicode``
     :param url: URL to open
-    :type url: unicode
+    :type url: ``unicode``
     :param params: mapping of URL parameters
-    :type params: dict
+    :type params: :class:`dict`
     :param data: mapping of form data ``{'field_name': 'value'}`` or
         :class:`str`
-    :type data: dict or str
+    :type data: :class:`dict` or :class:`str`
     :param headers: HTTP headers
-    :type headers: dict
+    :type headers: :class:`dict`
     :param cookies: cookies to send to server
-    :type cookies: dict
+    :type cookies: :class:`dict`
     :param files: files to upload (see below).
-    :type files: dict
+    :type files: :class:`dict`
     :param auth: username, password
-    :type auth: tuple
+    :type auth: ``tuple``
     :param timeout: connection timeout limit in seconds
-    :type timeout: int
+    :type timeout: ``int``
     :param allow_redirects: follow redirections
-    :type allow_redirects: bool
+    :type allow_redirects: ``Boolean``
     :param stream: Stream content instead of fetching it all at once.
-    :type stream: bool
-    :returns: Response object
-    :rtype: :class:`Response`
+    :type stream: ``bool``
+    :returns: :class:`Response` object
 
 
     The ``files`` argument is a dictionary::
@@ -598,12 +594,11 @@ def encode_multipart_formdata(fields, files):
     """Encode form data (``fields``) and ``files`` for POST request.
 
     :param fields: mapping of ``{name : value}`` pairs for normal form fields.
-    :type fields: dict
+    :type fields: :class:`dict`
     :param files: dictionary of fieldnames/files elements for file data.
                   See below for details.
-    :type files: dict of :class:`dict`
-    :returns: ``(headers, body)`` ``headers`` is a
-        :class:`dict` of HTTP headers
+    :type files: :class:`dict` of :class:`dicts`
+    :returns: ``(headers, body)`` ``headers`` is a :class:`dict` of HTTP headers
     :rtype: 2-tuple ``(dict, str)``
 
     The ``files`` argument is a dictionary::
@@ -614,18 +609,16 @@ def encode_multipart_formdata(fields, files):
         }
 
     - ``fieldname`` is the name of the field in the HTML form.
-    - ``mimetype`` is optional. If not provided, :mod:`mimetypes` will
-      be used to guess the mimetype, or ``application/octet-stream``
-      will be used.
+    - ``mimetype`` is optional. If not provided, :mod:`mimetypes` will be used to guess the mimetype, or ``application/octet-stream`` will be used.
 
     """
     def get_content_type(filename):
         """Return or guess mimetype of ``filename``.
 
         :param filename: filename of file
-        :type filename: unicode/str
+        :type filename: unicode/string
         :returns: mime-type, e.g. ``text/html``
-        :rtype: str
+        :rtype: :class::class:`str`
 
         """
 

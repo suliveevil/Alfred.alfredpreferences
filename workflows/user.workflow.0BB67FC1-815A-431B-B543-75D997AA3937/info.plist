@@ -15,7 +15,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Show Alfred with selected text</string>
+	<string>Alfred-Show with selected text</string>
 	<key>objects</key>
 	<array>
 		<dict>

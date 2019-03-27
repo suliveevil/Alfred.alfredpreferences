@@ -149,6 +149,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>DFD4541A-EBE1-44C3-9CBA-95A347FA023B</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>bili</string>
+			<key>text</key>
+			<string>BiliBili</string>
+			<key>url</key>
+			<string>https://search.bilibili.com/all?keyword={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>E85BD2FD-7FD0-48BF-92BF-E4AB212AA5AB</key>
 		<dict>
 			<key>enabled</key>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>24F4C509-3801-4CC1-B86D-24A2E577E749</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7C35A392-35CB-4E36-B63A-78E171EBDA8F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>2BE70F9F-17EB-4841-BD84-0EE8F41613C1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>24F4C509-3801-4CC1-B86D-24A2E577E749</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string></string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Browser+SearchEngine</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>set myURL to "https://www.google.com/search?q={query}"
+
+tell application "Google Chrome"
+	set activeIndex to get active tab index of window 1
+		tell window 1
+			set newTab to make new tab with properties {URL:myURL}
+		end tell
+		set active tab index of window 1 to activeIndex
+end tell</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7C35A392-35CB-4E36-B63A-78E171EBDA8F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>g</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Google Search</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>24F4C509-3801-4CC1-B86D-24A2E577E749</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>fixedorder</key>
+				<false/>
+				<key>items</key>
+				<string>[{"title":"BaiDu Search"},{"title":"Google Search"},{"title":"Bing Search"}]</string>
+				<key>keyword</key>
+				<string>ss</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>2BE70F9F-17EB-4841-BD84-0EE8F41613C1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>24F4C509-3801-4CC1-B86D-24A2E577E749</key>
+		<dict>
+			<key>xpos</key>
+			<integer>330</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+		<key>2BE70F9F-17EB-4841-BD84-0EE8F41613C1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>70</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+		<key>7C35A392-35CB-4E36-B63A-78E171EBDA8F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>560</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
