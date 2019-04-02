@@ -33,3 +33,11 @@
 {"title": "pr", "subtitle": "公关", "arg": "pr$%公关$%pr$%$%",         "icon": "icon.png"}
 {"title": "purge", "subtitle": "清洗", "arg": "purge$%清洗$%purge$%$%",         "icon": "icon.png"}
 {"title": "purge", "subtitle": "清洗", "arg": "purge$%清洗$%purge$%$%",         "icon": "icon.png"}
+{"title": "jot", "subtitle": "记", "arg": "jot$%记$%jot$%$%",         "icon": "icon.png"}
+{"title": "wei dai ma", "subtitle": "魏戴马", "arg": "wei dai ma$%魏戴马$%wei dai ma$%$%",         "icon": "icon.png"}
+{"title": "两个", "subtitle": "two", "arg": "两个$%two$%two$%$%",         "icon": "icon.png"}
+{"title": "两个小", "subtitle": "Two small", "arg": "两个小$%Two small$%Two small$%$%",         "icon": "icon.png"}
+{"title": "两个小瓶水", "subtitle": "Two small bottle of water", "arg": "两个小瓶水$%Two small bottle of water$%Two small bottle of water$%$%",         "icon": "icon.png"}
+{"title": "两个小瓶水", "subtitle": "Two small bottle of water", "arg": "两个小瓶水$%Two small bottle of water$%Two small bottle of water$%$%",         "icon": "icon.png"}
+{"title": "两个小瓶水装到一个大瓶里", "subtitle": "Two small bottle of water into a large bottle", "arg": "两个小瓶水装到一个大瓶里$%Two small bottle of water into a large bottle$%Two small bottle of water into a large bottle$%$%",         "icon": "icon.png"}
+{"title": "花括号", "subtitle": "Curly braces", "arg": "花括号$%Curly braces$%Curly braces$%$%",         "icon": "icon.png"}
