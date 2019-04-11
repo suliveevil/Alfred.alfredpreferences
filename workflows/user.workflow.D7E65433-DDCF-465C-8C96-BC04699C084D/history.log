@@ -41,3 +41,6 @@
 {"title": "两个小瓶水", "subtitle": "Two small bottle of water", "arg": "两个小瓶水$%Two small bottle of water$%Two small bottle of water$%$%",         "icon": "icon.png"}
 {"title": "两个小瓶水装到一个大瓶里", "subtitle": "Two small bottle of water into a large bottle", "arg": "两个小瓶水装到一个大瓶里$%Two small bottle of water into a large bottle$%Two small bottle of water into a large bottle$%$%",         "icon": "icon.png"}
 {"title": "花括号", "subtitle": "Curly braces", "arg": "花括号$%Curly braces$%Curly braces$%$%",         "icon": "icon.png"}
+{"title": "以下", "subtitle": "The following", "arg": "以下$%The following$%The following$%$%",         "icon": "icon.png"}
+{"title": "以下简称", "subtitle": "Hereinafter referred to as", "arg": "以下简称$%Hereinafter referred to as$%Hereinafter referred to as$%$%",         "icon": "icon.png"}
+{"title": "stash", "subtitle": "藏", "arg": "stash$%藏$%stash$%$%",         "icon": "icon.png"}
