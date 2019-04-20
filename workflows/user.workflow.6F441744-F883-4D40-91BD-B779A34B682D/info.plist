@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>80A38E18-DC66-40F8-92FF-A2525F87F970</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AEF9F1B9-F039-4B09-A24F-CD156B27AD4D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>967EA037-19B8-498B-9135-1B45D6996FD7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AEF9F1B9-F039-4B09-A24F-CD156B27AD4D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D85475F1-35F2-4B61-A7B1-44DDB43EC5F1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>933BEF13-B9EB-4AC8-A5F9-8B3ED6C94C17</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F1BABC8B-FCEB-4277-8B20-BF094E9EE950</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>967EA037-19B8-498B-9135-1B45D6996FD7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>80A38E18-DC66-40F8-92FF-A2525F87F970</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string></string>
+	<key>description</key>
+	<string>Quit Apps</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Command Q</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>bab</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Quit BetterAndBetter</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D85475F1-35F2-4B61-A7B1-44DDB43EC5F1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>tell application id com.sunny.BetterAndBetter to quit</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>933BEF13-B9EB-4AC8-A5F9-8B3ED6C94C17</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>on</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>BlueTooth On</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>967EA037-19B8-498B-9135-1B45D6996FD7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>tell application "System Events"		tell process "System Preferences"		activate	end tell		tell application "System Preferences"		set current pane to pane "com.apple.preferences.Bluetooth"	end tell		tell process "System Preferences"				set statName to name of button 3 of window 1 as string		set failSafe to 0				repeat until statName is not name of button 3 of window 1 as string ¬			or failSafe is 10			click button 3 of window 1			set failSafe to failSafe + 1			delay 0.1		end repeat			end tell		tell application "System Preferences"		quit	end tell	end tell</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>AEF9F1B9-F039-4B09-A24F-CD156B27AD4D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>bt</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>BlueTooth On</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F1BABC8B-FCEB-4277-8B20-BF094E9EE950</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>off</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>BlueTooth Off</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>80A38E18-DC66-40F8-92FF-A2525F87F970</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>80A38E18-DC66-40F8-92FF-A2525F87F970</key>
+		<dict>
+			<key>xpos</key>
+			<integer>400</integer>
+			<key>ypos</key>
+			<integer>300</integer>
+		</dict>
+		<key>933BEF13-B9EB-4AC8-A5F9-8B3ED6C94C17</key>
+		<dict>
+			<key>xpos</key>
+			<integer>400</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>967EA037-19B8-498B-9135-1B45D6996FD7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>400</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+		<key>AEF9F1B9-F039-4B09-A24F-CD156B27AD4D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>690</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+		<key>D85475F1-35F2-4B61-A7B1-44DDB43EC5F1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>160</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>F1BABC8B-FCEB-4277-8B20-BF094E9EE950</key>
+		<dict>
+			<key>xpos</key>
+			<integer>160</integer>
+			<key>ypos</key>
+			<integer>300</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
