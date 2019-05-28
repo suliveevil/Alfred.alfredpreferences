@@ -104,7 +104,7 @@
 			<key>config</key>
 			<dict>
 				<key>applescript</key>
-				<string>tell application id com.sunny.BetterAndBetter to quit</string>
+				<string>tell application id "com.sunny.BetterAndBetter" to quit</string>
 				<key>cachescript</key>
 				<false/>
 			</dict>
